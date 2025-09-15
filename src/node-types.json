@@ -1,0 +1,1948 @@
+[
+  {
+    "type": "bsv_actionBlock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_actionStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionBlock",
+          "named": true
+        },
+        {
+          "type": "bsv_actionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_varAssign",
+          "named": true
+        },
+        {
+          "type": "bsv_varDecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_arrayDims",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_attrName",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_attrSpec",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attrName",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_attributeInstance",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attrSpec",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_attributeInstances",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstance",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_baseLiteral",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_binop",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_bitConcat",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_bitSelect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_exprPrimary",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_bitWidth",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_condExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_condPredicate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_exprOrCondPattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_constantPattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_intLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_realLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_stringLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_derives",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typeclassIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_exportDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_exportItem",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_exportItem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_packageIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_exprOrCondPattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_exprPrimary",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionBlock",
+          "named": true
+        },
+        {
+          "type": "bsv_bitConcat",
+          "named": true
+        },
+        {
+          "type": "bsv_bitSelect",
+          "named": true
+        },
+        {
+          "type": "bsv_intLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_realLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_stringLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_structExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_taggedUnionExpr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_condExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_exprPrimary",
+          "named": true
+        },
+        {
+          "type": "bsv_operatorExpr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionBody",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_functionBodyStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionBodyStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_returnStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_functionBody",
+          "named": true
+        },
+        {
+          "type": "bsv_functionProto",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionProto",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_provisos",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_importDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_importItem",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_importItem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_packageIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_intLiteral",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_sizedIntLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_unsizedIntLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_interfaceDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_interfaceMemberDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeFormals",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_interfaceMemberDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_methodProto",
+          "named": true
+        },
+        {
+          "type": "bsv_subinterfaceDecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_lValue",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_lValue",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_memberBind",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_methodProto",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_methodProtoFormal",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_methodProtoFormal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleProto",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleFormalArgs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleFormalParam",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleFormalParams",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_moduleFormalParam",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleProto",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_moduleFormalArgs",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleFormalParams",
+          "named": true
+        },
+        {
+          "type": "bsv_provisos",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleStmt",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_operatorExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_binop",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_unop",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_overloadedDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_functionProto",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleProto",
+          "named": true
+        },
+        {
+          "type": "bsv_varDecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_package",
+    "named": true,
+    "root": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bsv_packageIde",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_exportDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_importDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_packageIde",
+          "named": true
+        },
+        {
+          "type": "bsv_packageStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_packageIde",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_packageStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_functionDef",
+          "named": true
+        },
+        {
+          "type": "bsv_interfaceDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleDef",
+          "named": true
+        },
+        {
+          "type": "bsv_topVarDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_typeDef",
+          "named": true
+        },
+        {
+          "type": "bsv_typeclassDef",
+          "named": true
+        },
+        {
+          "type": "bsv_typeclassInstanceDef",
+          "named": true
+        },
+        {
+          "type": "bsv_varAssign",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_constantPattern",
+          "named": true
+        },
+        {
+          "type": "bsv_structPattern",
+          "named": true
+        },
+        {
+          "type": "bsv_taggedUnionPattern",
+          "named": true
+        },
+        {
+          "type": "bsv_tuplePattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_proviso",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_typeclassIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_provisos",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_proviso",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_realLiteral",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_returnStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_sizedIntLiteral",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_baseLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_bitWidth",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_structExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_memberBind",
+          "named": true
+        },
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_structMember",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_subStruct",
+          "named": true
+        },
+        {
+          "type": "bsv_subUnion",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_structPattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_subStruct",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_structMember",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_subUnion",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_unionMember",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_subinterfaceDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_taggedUnionExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_exprPrimary",
+          "named": true
+        },
+        {
+          "type": "bsv_memberBind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_taggedUnionPattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_topVarDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typeConcrete",
+          "named": true
+        },
+        {
+          "type": "bsv_varInit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_tuplePattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_typeIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeNat",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typeConcrete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typeConcrete",
+          "named": true
+        },
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeNat",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typeConcreteIde",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_typeDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typedefEnum",
+          "named": true
+        },
+        {
+          "type": "bsv_typedefStruct",
+          "named": true
+        },
+        {
+          "type": "bsv_typedefSynonym",
+          "named": true
+        },
+        {
+          "type": "bsv_typedefTaggedUnion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typeFormals",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typeVarIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typeIde",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeVarIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typeNat",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_typeVarIde",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_typeclassDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_overloadedDef",
+          "named": true
+        },
+        {
+          "type": "bsv_provisos",
+          "named": true
+        },
+        {
+          "type": "bsv_typeFormals",
+          "named": true
+        },
+        {
+          "type": "bsv_typeclassIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typedepends",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typeclassIde",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_typeclassInstanceDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_functionDef",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleDef",
+          "named": true
+        },
+        {
+          "type": "bsv_provisos",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_typeclassIde",
+          "named": true
+        },
+        {
+          "type": "bsv_varAssign",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedefEnum",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_derives",
+          "named": true
+        },
+        {
+          "type": "bsv_typedefEnumElement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedefEnumElement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_intLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedefStruct",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_derives",
+          "named": true
+        },
+        {
+          "type": "bsv_structMember",
+          "named": true
+        },
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeFormals",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedefSynonym",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeFormals",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedefTaggedUnion",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_derives",
+          "named": true
+        },
+        {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
+          "type": "bsv_typeFormals",
+          "named": true
+        },
+        {
+          "type": "bsv_unionMember",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedepend",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typelist",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typedepends",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typedepend",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_typelist",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_typeVarIde",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_unionMember",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_subStruct",
+          "named": true
+        },
+        {
+          "type": "bsv_subUnion",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_unop",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_unsizedIntLiteral",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_baseLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_sign",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_varAssign",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_lValue",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_varDecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_varInit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_varInit",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_arrayDims",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "&&",
+    "named": false
+  },
+  {
+    "type": "&&&",
+    "named": false
+  },
+  {
+    "type": "'0",
+    "named": false
+  },
+  {
+    "type": "'1",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": "(*",
+    "named": false
+  },
+  {
+    "type": "(..)",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "*)",
+    "named": false
+  },
+  {
+    "type": "*/",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": ".*",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "/*",
+    "named": false
+  },
+  {
+    "type": "//",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": ">>",
+    "named": false
+  },
+  {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "TODO",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "^~",
+    "named": false
+  },
+  {
+    "type": "action",
+    "named": false
+  },
+  {
+    "type": "begin",
+    "named": false
+  },
+  {
+    "type": "bit",
+    "named": false
+  },
+  {
+    "type": "bsv_sign",
+    "named": true
+  },
+  {
+    "type": "bsv_stringLiteral",
+    "named": true
+  },
+  {
+    "type": "case",
+    "named": false
+  },
+  {
+    "type": "default",
+    "named": false
+  },
+  {
+    "type": "dependencies",
+    "named": false
+  },
+  {
+    "type": "deriving",
+    "named": false
+  },
+  {
+    "type": "determines",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "end",
+    "named": false
+  },
+  {
+    "type": "endaction",
+    "named": false
+  },
+  {
+    "type": "endcase",
+    "named": false
+  },
+  {
+    "type": "endfunction",
+    "named": false
+  },
+  {
+    "type": "endinstance",
+    "named": false
+  },
+  {
+    "type": "endinterface",
+    "named": false
+  },
+  {
+    "type": "endmodule",
+    "named": false
+  },
+  {
+    "type": "endpackage",
+    "named": false
+  },
+  {
+    "type": "endtypeclass",
+    "named": false
+  },
+  {
+    "type": "enum",
+    "named": false
+  },
+  {
+    "type": "export",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
+  },
+  {
+    "type": "function",
+    "named": false
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "instance",
+    "named": false
+  },
+  {
+    "type": "interface",
+    "named": false
+  },
+  {
+    "type": "matches",
+    "named": false
+  },
+  {
+    "type": "method",
+    "named": false
+  },
+  {
+    "type": "module",
+    "named": false
+  },
+  {
+    "type": "numeric",
+    "named": false
+  },
+  {
+    "type": "package",
+    "named": false
+  },
+  {
+    "type": "parameter",
+    "named": false
+  },
+  {
+    "type": "provisos",
+    "named": false
+  },
+  {
+    "type": "return",
+    "named": false
+  },
+  {
+    "type": "struct",
+    "named": false
+  },
+  {
+    "type": "tagged",
+    "named": false
+  },
+  {
+    "type": "type",
+    "named": false
+  },
+  {
+    "type": "typeclass",
+    "named": false
+  },
+  {
+    "type": "typedef",
+    "named": false
+  },
+  {
+    "type": "union",
+    "named": false
+  },
+  {
+    "type": "void",
+    "named": false
+  },
+  {
+    "type": "while",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "~",
+    "named": false
+  },
+  {
+    "type": "~&",
+    "named": false
+  },
+  {
+    "type": "~^",
+    "named": false
+  },
+  {
+    "type": "~|",
+    "named": false
+  }
+]

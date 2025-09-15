@@ -8,3 +8,13 @@ endpackage
 -------------
 
 (bsv_package (bsv_packageIde))
+
+=============
+Empty package with comment
+=============
+
+// Packages without specified package endpackages should parse
+
+-------------
+
+(bsv_package)
