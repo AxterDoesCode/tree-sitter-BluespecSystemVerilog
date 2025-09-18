@@ -1,0 +1,41 @@
+=================
+Method definition
+=================
+
+package Test;
+
+module mkExample();
+    method Bit#(8) give() if (!not_yet);
+        return value_reg;
+    endmethod
+endmodule
+
+endpackage
+
+------------------
+
+(bsv_package
+      (bsv_packageIde)
+      (bsv_packageStmt
+        (bsv_moduleDef
+          (bsv_moduleProto)
+          (bsv_moduleStmt
+            (bsv_methodDef
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde))
+                (bsv_type
+                  (bsv_typeNat)))
+              (bsv_implicitCond
+                (bsv_condPredicate
+                  (bsv_exprOrCondPattern
+                    (bsv_expression
+                      (bsv_operatorExpr
+                        (bsv_unop)
+                        (bsv_expression
+                          (bsv_exprPrimary)))))))
+              (bsv_functionBody
+                (bsv_functionBodyStmt
+                  (bsv_returnStmt
+                    (bsv_expression
+                      (bsv_exprPrimary))))))))))

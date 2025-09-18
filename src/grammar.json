@@ -1612,6 +1612,10 @@
           "name": "bsv_moduleInst"
         },
         {
+          "type": "SYMBOL",
+          "name": "bsv_methodDef"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -2311,6 +2315,226 @@
         }
       ]
     },
+    "bsv_methodDef": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "method"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "bsv_type"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_bsv_identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "bsv_methodFormals"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "bsv_implicitCond"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_functionBody"
+        },
+        {
+          "type": "STRING",
+          "value": "endmethod"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ":"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "bsv_methodFormals": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "bsv_methodFormal"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_methodFormal"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bsv_methodFormal": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "bsv_type"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_bsv_identifier"
+        }
+      ]
+    },
+    "bsv_implicitCond": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_condPredicate"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "bsv_condPredicate": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PREC_RIGHT",
+          "value": 9,
+          "content": {
+            "type": "SYMBOL",
+            "name": "bsv_exprOrCondPattern"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "&&&"
+              },
+              {
+                "type": "PREC_RIGHT",
+                "value": 9,
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "bsv_exprOrCondPattern"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bsv_exprOrCondPattern": {
+      "type": "PREC",
+      "value": 11,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "bsv_expression"
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              },
+              {
+                "type": "STRING",
+                "value": "matches"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_pattern"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "bsv_functionDef": {
       "type": "SEQ",
       "members": [
@@ -2904,69 +3128,6 @@
         ]
       }
     },
-    "bsv_condPredicate": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "PREC_RIGHT",
-          "value": 9,
-          "content": {
-            "type": "SYMBOL",
-            "name": "bsv_exprOrCondPattern"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "&&&"
-              },
-              {
-                "type": "PREC_RIGHT",
-                "value": 9,
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "bsv_exprOrCondPattern"
-                }
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "bsv_exprOrCondPattern": {
-      "type": "PREC",
-      "value": 11,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "bsv_expression"
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "bsv_expression"
-              },
-              {
-                "type": "STRING",
-                "value": "matches"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "bsv_pattern"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "bsv_operatorExpr": {
       "type": "CHOICE",
       "members": [
@@ -3446,6 +3607,10 @@
         {
           "type": "SYMBOL",
           "name": "bsv_varAssign"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_moduleDef"
         },
         {
           "type": "SEQ",

@@ -196,7 +196,7 @@ module.exports = grammar({
     // TODO: Implement missing rules
     bsv_moduleStmt: $ => choice(
       $.bsv_moduleInst,
-      // $.bsv_methodDef,
+      $.bsv_methodDef,
       // $.bsv_subinterfaceDef,
       // $.bsv_rule,
       // $.bsv_varDo, $.bsv_varDeclDo,
@@ -216,7 +216,6 @@ module.exports = grammar({
     ),
 
     // short form module instantiation
-    // TODO: add tests for these
     bsv_moduleInst: $ => seq(
       optional($.bsv_attributeInstances),
       $.bsv_type,
@@ -237,6 +236,27 @@ module.exports = grammar({
       $.bsv_expression,
       seq('clocked_by', $.bsv_expression),
       seq('reset_by', $.bsv_expression)
+    ),
+
+    //method definition
+    // TODO: Shorthands for methodDefs of Action and ActionValue methods, 5.5.1 in language ref
+    bsv_methodDef: $ => seq(
+      'method',
+      optional($.bsv_type),
+      $._bsv_identifier,
+      '(', optional($.bsv_methodFormals), ')',
+      optional($.bsv_implicitCond), ';',
+      $.bsv_functionBody,
+      'endmethod',
+      optional(seq(':', $._bsv_identifier))
+    ),
+    bsv_methodFormals: $ => commaSepList1($.bsv_methodFormal),
+    bsv_methodFormal: $ => seq(optional($.bsv_type), $._bsv_identifier),
+    bsv_implicitCond: $ => seq('if', '(', $.bsv_condPredicate, ')'),
+    bsv_condPredicate: $ => sepList1('&&&', $.bsv_exprOrCondPattern),
+    bsv_exprOrCondPattern: $ => choice(
+      $.bsv_expression,
+      seq($.bsv_expression, 'matches', $.bsv_pattern)
     ),
 
     // function definition
@@ -355,7 +375,7 @@ module.exports = grammar({
         $.bsv_varDecl,
         $.bsv_varAssign,
         //, $.bsv_functionDef
-        //, $.bsv_moduleDef
+        $.bsv_moduleDef,
         ctxtBeginEndStmt($, $.bsv_actionStmt),
         ctxtIf($, $.bsv_actionStmt),
         ctxtCase($, $.bsv_actionStmt),

@@ -39,6 +39,10 @@
           "named": true
         },
         {
+          "type": "bsv_moduleDef",
+          "named": true
+        },
+        {
           "type": "bsv_pattern",
           "named": true
         },
@@ -435,6 +439,21 @@
     }
   },
   {
+    "type": "bsv_implicitCond",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_importDecl",
     "named": true,
     "fields": {},
@@ -558,6 +577,63 @@
       "types": [
         {
           "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_methodDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_functionBody",
+          "named": true
+        },
+        {
+          "type": "bsv_implicitCond",
+          "named": true
+        },
+        {
+          "type": "bsv_methodFormals",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_methodFormal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_methodFormals",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_methodFormal",
           "named": true
         }
       ]
@@ -779,6 +855,10 @@
         },
         {
           "type": "bsv_functionDef",
+          "named": true
+        },
+        {
+          "type": "bsv_methodDef",
           "named": true
         },
         {
@@ -1914,6 +1994,10 @@
   },
   {
     "type": "endinterface",
+    "named": false
+  },
+  {
+    "type": "endmethod",
     "named": false
   },
   {
