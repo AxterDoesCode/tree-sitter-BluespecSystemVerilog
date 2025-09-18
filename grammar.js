@@ -191,9 +191,54 @@ module.exports = grammar({
       choice(seq(optional($.bsv_attributeInstances), $.bsv_type),
         commaSepList1(seq(optional($.bsv_attributeInstances),
           $.bsv_type, $._bsv_identifier))),
+
     // module statements
-    // TODO
-    bsv_moduleStmt: $ => 'TODO',
+    // TODO: Implement missing rules
+    bsv_moduleStmt: $ => choice(
+      $.bsv_moduleInst,
+      // $.bsv_methodDef,
+      // $.bsv_subinterfaceDef,
+      // $.bsv_rule,
+      // $.bsv_varDo, $.bsv_varDeclDo,
+      // $.bsv_functionCall,
+      // $.bsv_systemTaskStmt,
+      seq('(', $.bsv_expression, ')'),
+      $.bsv_returnStmt,
+      $.bsv_varDecl, $.bsv_varAssign,
+      $.bsv_functionDef,
+      $.bsv_moduleDef,
+      ctxtBeginEndStmt($, $.bsv_moduleStmt),
+      ctxtIf($, $.bsv_moduleStmt),
+      ctxtCase($, $.bsv_moduleStmt),
+      ctxtCaseMatches($, $.bsv_moduleStmt),
+      ctxtFor($, $.bsv_moduleStmt),
+      ctxtWhile($, $.bsv_moduleStmt)
+    ),
+
+    // short form module instantiation
+    // TODO: add tests for these
+    bsv_moduleInst: $ => seq(
+      optional($.bsv_attributeInstances),
+      $.bsv_type,
+      $._bsv_identifier,
+      '<-',
+      $.bsv_moduleApp,
+      ';'
+    ),
+
+    bsv_moduleApp: $ => seq(
+      $._bsv_identifier,
+      '(',
+      optional(commaSepList($.bsv_moduleActualParamArg)),
+      ')',
+    ),
+
+    bsv_moduleActualParamArg: $ => choice(
+      $.bsv_expression,
+      seq('clocked_by', $.bsv_expression),
+      seq('reset_by', $.bsv_expression)
+    ),
+
     // function definition
     bsv_functionDef: $ =>
       seq(optional($.bsv_attributeInstances),
@@ -410,8 +455,10 @@ module.exports = grammar({
     // string literals
     bsv_stringLiteral: $ => /\".*\"/,
     // identifiers
-    _bsv_identifier: $ => /[a-z][a-zA-Z0-9$_]*/,
-    _bsv_Identifier: $ => /[A-Z][a-zA-Z0-9$_]*/,
+    // TODO: not constrained enough, read Section 2.2 in the BSV_lang_ref, slightly ambiguous
+    // below identifier regex would fail on _1ident?
+    _bsv_identifier: $ => /[$_]*[a-z][a-zA-Z0-9$_]*/,
+    _bsv_Identifier: $ => /[$_]*[A-Z][a-zA-Z0-9$_]*/,
     // comments
     _bsv_line_comment: $ => seq('//', /.*\n/),
     _bsv_block_comment: $ => seq('/*', repeat(/./), '*/'),

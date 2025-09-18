@@ -606,6 +606,36 @@
     }
   },
   {
+    "type": "bsv_moduleActualParamArg",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_moduleApp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_moduleActualParamArg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_moduleDef",
     "named": true,
     "fields": {},
@@ -682,6 +712,29 @@
     }
   },
   {
+    "type": "bsv_moduleInst",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleApp",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_moduleProto",
     "named": true,
     "fields": {},
@@ -711,7 +764,57 @@
   {
     "type": "bsv_moduleStmt",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_functionDef",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleDef",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleInst",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        },
+        {
+          "type": "bsv_returnStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_varAssign",
+          "named": true
+        },
+        {
+          "type": "bsv_varDecl",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bsv_operatorExpr",
@@ -1686,6 +1789,10 @@
     "named": false
   },
   {
+    "type": "<-",
+    "named": false
+  },
+  {
     "type": "<<",
     "named": false
   },
@@ -1759,6 +1866,10 @@
   },
   {
     "type": "case",
+    "named": false
+  },
+  {
+    "type": "clocked_by",
     "named": false
   },
   {
@@ -1875,6 +1986,10 @@
   },
   {
     "type": "provisos",
+    "named": false
+  },
+  {
+    "type": "reset_by",
     "named": false
   },
   {

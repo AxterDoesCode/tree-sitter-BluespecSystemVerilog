@@ -2,7 +2,47 @@
 temp test
 =================
 
+module mkSpecFifo#(
+    SpecFifoSched sched, // schedule EHR ordering
+    Bool lazyEnq // whether we calculate enq guard lazily
+)(
+    SpecFifo#(size, t, validPortNum, sbPortNum)
+) provisos (
+    Alias#(idxT, Bit#(TLog#(size))),
+    Bits#(t, _tsz),
+    FShow#(t)
+);
+    interface SpeculationUpdate specUpdate;
+        method Action correctSpeculation(SpecBits mask);
+            // clear spec bits for all entries
+            function Action correctSpec(Integer i);
+            action
+                SpecBits sb = specBits[i][sbCorrectSpecPort];
+                specBits[i][sbCorrectSpecPort] <= sb & mask;
+            endaction
+            endfunction
+            Vector#(size, Integer) idxVec = genVector;
+            joinActions(map(correctSpec, idxVec));
+        endmethod
+
+        method Action incorrectSpeculation(Bool kill_all, SpecTag specTag);
+            // clear entries
+            function Action incorrectSpec(Integer i);
+            action
+                SpecBits sb = specBits[i][sched.sbWrongSpecPort];
+                if(kill_all || sb[specTag] == 1) begin
+                    valid[i][sched.validWrongSpecPort] <= False; // ordered after deq
+                end
+            endaction
+            endfunction
+            Vector#(size, Integer) idxVec = genVector;
+            joinActions(map(incorrectSpec, idxVec));
+            // make conflict with others
+            wrongSpec_enq_conflict.send;
+            wrongSpec_canon_conflict.send;
+            wrongSpec_deq_conflict.send;
+        endmethod
+    endinterface
+endmodule
+
 -------
-
-(bsv_package)
-

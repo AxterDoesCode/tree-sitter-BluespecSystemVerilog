@@ -1,0 +1,42 @@
+===============================
+Short form module instantiation
+===============================
+
+module mkDesign(Clock prim_clk, Clock sec_clk, Design_IFC ifc);
+    RWire#(Bool) select <- mkRWire (select, clocked_by sec_clk, reset_by rst);
+endmodule:mkDesign
+
+------------------
+
+(bsv_package
+      (bsv_packageStmt
+        (bsv_moduleDef
+          (bsv_moduleProto
+            (bsv_moduleFormalArgs
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde)))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde)))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde)))))
+          (bsv_moduleStmt
+            (bsv_moduleInst
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde))
+                (bsv_type
+                  (bsv_typeIde
+                    (bsv_typeConcreteIde))))
+              (bsv_moduleApp
+                (bsv_moduleActualParamArg
+                  (bsv_expression
+                    (bsv_exprPrimary)))
+                (bsv_moduleActualParamArg
+                  (bsv_expression
+                    (bsv_exprPrimary)))
+                (bsv_moduleActualParamArg
+                  (bsv_expression
+                    (bsv_exprPrimary)))))))))
