@@ -197,7 +197,7 @@ module.exports = grammar({
     bsv_moduleStmt: $ => choice(
       $.bsv_moduleInst,
       $.bsv_methodDef,
-      // $.bsv_subinterfaceDef,
+      $.bsv_subinterfaceDef,
       // $.bsv_rule,
       // $.bsv_varDo, $.bsv_varDeclDo,
       // $.bsv_functionCall,
@@ -238,17 +238,64 @@ module.exports = grammar({
       seq('reset_by', $.bsv_expression)
     ),
 
+    bsv_subinterfaceDef: $ => choice(
+      seq(
+        'interface',
+        $._bsv_Identifier,
+        $._bsv_identifier, ';',
+        '{', $.bsv_interfaceStmt, '}',
+        'endinterface',
+        optional(seq(':', $._bsv_identifier)),
+      ),
+      // sub interface definition by assignment
+      seq(
+        'interface',
+        optional($.bsv_type),
+        $._bsv_identifier, '=',
+        $.bsv_expression, ';'
+      )
+    ),
+
+    bsv_interfaceStmt: $ => choice(
+      $.bsv_methodDef,
+      $.bsv_subinterfaceDef,
+      $.bsv_expressionStmt
+    ),
+
+    bsv_expressionStmt: $ => choice(
+      $.bsv_varDecl,
+      $.bsv_varAssign,
+      $.bsv_functionDef,
+      $.bsv_moduleDef,
+      ctxtBeginEndStmt($, $.bsv_expression),
+      ctxtIf($, $.bsv_expression),
+      ctxtCase($, $.bsv_expression),
+      ctxtFor($, $.bsv_expression),
+      ctxtWhile($, $.bsv_expression)
+    ),
+
     //method definition
     // TODO: Shorthands for methodDefs of Action and ActionValue methods, 5.5.1 in language ref
-    bsv_methodDef: $ => seq(
-      'method',
-      optional($.bsv_type),
-      $._bsv_identifier,
-      '(', optional($.bsv_methodFormals), ')',
-      optional($.bsv_implicitCond), ';',
-      $.bsv_functionBody,
-      'endmethod',
-      optional(seq(':', $._bsv_identifier))
+    bsv_methodDef: $ => choice(
+      seq(
+        'method',
+        optional($.bsv_type),
+        $._bsv_identifier,
+        '(', optional($.bsv_methodFormals), ')',
+        optional($.bsv_implicitCond), ';',
+        $.bsv_functionBody,
+        'endmethod',
+        optional(seq(':', $._bsv_identifier))
+      ),
+      // method definition by assignment
+      seq(
+        'method',
+        optional($.bsv_type),
+        $._bsv_identifier,
+        '(', optional($.bsv_methodFormals), ')',
+        optional($.bsv_implicitCond), '=',
+        $.bsv_expression, ';'
+      )
     ),
     bsv_methodFormals: $ => commaSepList1($.bsv_methodFormal),
     bsv_methodFormal: $ => seq(optional($.bsv_type), $._bsv_identifier),

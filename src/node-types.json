@@ -591,6 +591,10 @@
       "required": true,
       "types": [
         {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
           "type": "bsv_functionBody",
           "named": true
         },
@@ -879,6 +883,10 @@
         },
         {
           "type": "bsv_returnStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_subinterfaceDef",
           "named": true
         },
         {
@@ -1226,6 +1234,25 @@
       "types": [
         {
           "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_subinterfaceDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
           "named": true
         },
         {
