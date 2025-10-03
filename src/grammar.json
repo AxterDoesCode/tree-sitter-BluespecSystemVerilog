@@ -2342,16 +2342,11 @@
               "value": ";"
             },
             {
-              "type": "STRING",
-              "value": "{"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "bsv_interfaceStmt"
-            },
-            {
-              "type": "STRING",
-              "value": "}"
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "bsv_interfaceStmt"
+              }
             },
             {
               "type": "STRING",

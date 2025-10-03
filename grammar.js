@@ -99,7 +99,7 @@ module.exports = grammar({
         optional(seq('=', $.bsv_expression))),
     bsv_arrayDims: $ => repeat1(seq('[', $.bsv_expression, ']')),
 
-    // varible assignment
+    // variable assignment
     bsv_varAssign: $ => seq($.bsv_lValue, '=', $.bsv_expression, ';'),
     bsv_lValue: $ => choice($._bsv_identifier,
       seq($.bsv_lValue, '.', $._bsv_identifier),
@@ -243,7 +243,7 @@ module.exports = grammar({
         'interface',
         $._bsv_Identifier,
         $._bsv_identifier, ';',
-        '{', $.bsv_interfaceStmt, '}',
+        repeat($.bsv_interfaceStmt),
         'endinterface',
         optional(seq(':', $._bsv_identifier)),
       ),
