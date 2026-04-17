@@ -48,3 +48,7 @@ zig-out/
 *.tar.gz
 *.tgz
 *.zip
+
+# Local dev symlinks (reference material / real-world test corpus)
+.piccolo
+.BSV_lang_ref_guide.pdf

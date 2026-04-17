@@ -25,9 +25,10 @@ endpackage
 (bsv_package
   (bsv_packageIde)
   (bsv_packageStmt
-    (bsv_topVarDecl
-      (bsv_typeConcrete
-        (bsv_typeConcreteIde))
+    (bsv_varDecl
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde)))
       (bsv_varInit
         (bsv_expression
           (bsv_exprPrimary
@@ -60,10 +61,9 @@ endpackage
                 (bsv_condPredicate
                   (bsv_exprOrCondPattern
                     (bsv_expression
-                      (bsv_operatorExpr
+                      (bsv_binaryExpr
                         (bsv_expression
                           (bsv_exprPrimary))
-                        (bsv_binop)
                         (bsv_expression
                           (bsv_exprPrimary
                             (bsv_intLiteral
@@ -80,10 +80,9 @@ endpackage
                 (bsv_condPredicate
                   (bsv_exprOrCondPattern
                     (bsv_expression
-                      (bsv_operatorExpr
+                      (bsv_binaryExpr
                         (bsv_expression
                           (bsv_exprPrimary))
-                        (bsv_binop)
                         (bsv_expression
                           (bsv_exprPrimary
                             (bsv_intLiteral
@@ -92,10 +91,9 @@ endpackage
                   (bsv_condPredicate
                     (bsv_exprOrCondPattern
                       (bsv_expression
-                        (bsv_operatorExpr
+                        (bsv_binaryExpr
                           (bsv_expression
                             (bsv_exprPrimary))
-                          (bsv_binop)
                           (bsv_expression
                             (bsv_exprPrimary
                               (bsv_intLiteral
@@ -116,10 +114,9 @@ endpackage
                             (bsv_unsizedIntLiteral))))))))
               (bsv_actionStmt
                 (bsv_expression
-                  (bsv_operatorExpr
+                  (bsv_binaryExpr
                     (bsv_expression
                       (bsv_exprPrimary))
-                    (bsv_binop)
                     (bsv_expression
                       (bsv_exprPrimary
                         (bsv_intLiteral
@@ -128,10 +125,9 @@ endpackage
                   (bsv_varAssign
                     (bsv_lValue)
                     (bsv_expression
-                      (bsv_operatorExpr
+                      (bsv_binaryExpr
                         (bsv_expression
                           (bsv_exprPrimary))
-                        (bsv_binop)
                         (bsv_expression
                           (bsv_exprPrimary
                             (bsv_intLiteral
@@ -151,17 +147,15 @@ endpackage
                     (bsv_intLiteral
                       (bsv_unsizedIntLiteral))))
                 (bsv_expression
-                  (bsv_operatorExpr
+                  (bsv_binaryExpr
                     (bsv_expression
                       (bsv_exprPrimary))
-                    (bsv_binop)
                     (bsv_expression
                       (bsv_exprPrimary))))
                 (bsv_expression
-                  (bsv_operatorExpr
+                  (bsv_binaryExpr
                     (bsv_expression
                       (bsv_exprPrimary))
-                    (bsv_binop)
                     (bsv_expression
                       (bsv_exprPrimary
                         (bsv_intLiteral
@@ -170,10 +164,9 @@ endpackage
                   (bsv_condPredicate
                     (bsv_exprOrCondPattern
                       (bsv_expression
-                        (bsv_operatorExpr
+                        (bsv_binaryExpr
                           (bsv_expression
                             (bsv_exprPrimary))
-                          (bsv_binop)
                           (bsv_expression
                             (bsv_exprPrimary))))))
                   (bsv_actionStmt

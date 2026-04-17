@@ -31,6 +31,14 @@
           "named": true
         },
         {
+          "type": "bsv_actionValueBlock",
+          "named": true
+        },
+        {
+          "type": "bsv_callStmt",
+          "named": true
+        },
+        {
           "type": "bsv_condPredicate",
           "named": true
         },
@@ -39,11 +47,23 @@
           "named": true
         },
         {
+          "type": "bsv_functionDef",
+          "named": true
+        },
+        {
           "type": "bsv_moduleDef",
           "named": true
         },
         {
           "type": "bsv_pattern",
+          "named": true
+        },
+        {
+          "type": "bsv_regWrite",
+          "named": true
+        },
+        {
+          "type": "bsv_returnStmt",
           "named": true
         },
         {
@@ -56,6 +76,29 @@
         },
         {
           "type": "bsv_varDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_varDeclDo",
+          "named": true
+        },
+        {
+          "type": "bsv_varDo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_actionValueBlock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionStmt",
           "named": true
         }
       ]
@@ -136,9 +179,38 @@
     "fields": {}
   },
   {
-    "type": "bsv_binop",
+    "type": "bsv_beginEndExpr",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_expressionStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_binaryExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bsv_bitConcat",
@@ -178,6 +250,59 @@
     "type": "bsv_bitWidth",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "bsv_bviMethod",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_callStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_exprPrimary",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_caseExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bsv_condExpr",
@@ -313,6 +438,14 @@
           "named": true
         },
         {
+          "type": "bsv_actionValueBlock",
+          "named": true
+        },
+        {
+          "type": "bsv_beginEndExpr",
+          "named": true
+        },
+        {
           "type": "bsv_bitConcat",
           "named": true
         },
@@ -321,11 +454,51 @@
           "named": true
         },
         {
+          "type": "bsv_caseExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_fieldSelect",
+          "named": true
+        },
+        {
+          "type": "bsv_functionCall",
+          "named": true
+        },
+        {
           "type": "bsv_intLiteral",
           "named": true
         },
         {
+          "type": "bsv_interfaceExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_macroRef",
+          "named": true
+        },
+        {
+          "type": "bsv_methodCall",
+          "named": true
+        },
+        {
+          "type": "bsv_parFsmStmt",
+          "named": true
+        },
+        {
           "type": "bsv_realLiteral",
+          "named": true
+        },
+        {
+          "type": "bsv_rulesExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_seqFsmStmt",
           "named": true
         },
         {
@@ -338,6 +511,14 @@
         },
         {
           "type": "bsv_taggedUnionExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_typeAssertion",
+          "named": true
+        },
+        {
+          "type": "bsv_valueOfExpr",
           "named": true
         }
       ]
@@ -352,6 +533,10 @@
       "required": true,
       "types": [
         {
+          "type": "bsv_binaryExpr",
+          "named": true
+        },
+        {
           "type": "bsv_condExpr",
           "named": true
         },
@@ -360,7 +545,150 @@
           "named": true
         },
         {
-          "type": "bsv_operatorExpr",
+          "type": "bsv_unaryExpr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_expressionStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_callStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_expressionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_functionDef",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleDef",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_varAssign",
+          "named": true
+        },
+        {
+          "type": "bsv_varDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_varDeclDo",
+          "named": true
+        },
+        {
+          "type": "bsv_varDo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_externCImport",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_functionProto",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_externModuleImport",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_importBVIStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleProto",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_fieldSelect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_exprPrimary",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_fsmStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_fsmStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_parFsmStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_seqFsmStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
           "named": true
         }
       ]
@@ -375,6 +703,14 @@
       "required": true,
       "types": [
         {
+          "type": "bsv_actionBlock",
+          "named": true
+        },
+        {
+          "type": "bsv_actionValueBlock",
+          "named": true
+        },
+        {
           "type": "bsv_functionBodyStmt",
           "named": true
         }
@@ -386,11 +722,78 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
+          "type": "bsv_callStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_functionBodyStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_functionDef",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleDef",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        },
+        {
           "type": "bsv_returnStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        },
+        {
+          "type": "bsv_varAssign",
+          "named": true
+        },
+        {
+          "type": "bsv_varDecl",
+          "named": true
+        },
+        {
+          "type": "bsv_varDeclDo",
+          "named": true
+        },
+        {
+          "type": "bsv_varDo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionCall",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_exprPrimary",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
           "named": true
         }
       ]
@@ -409,11 +812,34 @@
           "named": true
         },
         {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
           "type": "bsv_functionBody",
           "named": true
         },
         {
           "type": "bsv_functionProto",
+          "named": true
+        },
+        {
+          "type": "bsv_functionProtoAssign",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionFormal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_type",
           "named": true
         }
       ]
@@ -425,8 +851,35 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
+        {
+          "type": "bsv_functionFormal",
+          "named": true
+        },
+        {
+          "type": "bsv_provisos",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_functionProtoAssign",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_functionFormal",
+          "named": true
+        },
         {
           "type": "bsv_provisos",
           "named": true
@@ -448,6 +901,37 @@
       "types": [
         {
           "type": "bsv_condPredicate",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_importBVIStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_bviMethod",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_schedulingAnnotation",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
           "named": true
         }
       ]
@@ -530,6 +1014,21 @@
     }
   },
   {
+    "type": "bsv_interfaceExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_interfaceStmt",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_interfaceMemberDecl",
     "named": true,
     "fields": {},
@@ -543,6 +1042,29 @@
         },
         {
           "type": "bsv_subinterfaceDecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_interfaceStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expressionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_methodDef",
+          "named": true
+        },
+        {
+          "type": "bsv_subinterfaceDef",
           "named": true
         }
       ]
@@ -583,7 +1105,7 @@
     }
   },
   {
-    "type": "bsv_methodDef",
+    "type": "bsv_methodCall",
     "named": true,
     "fields": {},
     "children": {
@@ -591,11 +1113,30 @@
       "required": true,
       "types": [
         {
-          "type": "bsv_expression",
+          "type": "bsv_exprPrimary",
           "named": true
         },
         {
-          "type": "bsv_functionBody",
+          "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_methodDef",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_expression",
           "named": true
         },
         {
@@ -770,6 +1311,10 @@
           "named": true
         },
         {
+          "type": "bsv_functionFormal",
+          "named": true
+        },
+        {
           "type": "bsv_type",
           "named": true
         }
@@ -799,6 +1344,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bsv_arrayDims",
+          "named": true
+        },
         {
           "type": "bsv_attributeInstances",
           "named": true
@@ -850,6 +1399,10 @@
       "required": false,
       "types": [
         {
+          "type": "bsv_callStmt",
+          "named": true
+        },
+        {
           "type": "bsv_condPredicate",
           "named": true
         },
@@ -882,7 +1435,15 @@
           "named": true
         },
         {
+          "type": "bsv_regWrite",
+          "named": true
+        },
+        {
           "type": "bsv_returnStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_rule",
           "named": true
         },
         {
@@ -900,28 +1461,13 @@
         {
           "type": "bsv_varDecl",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "bsv_operatorExpr",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
+        },
         {
-          "type": "bsv_binop",
+          "type": "bsv_varDeclDo",
           "named": true
         },
         {
-          "type": "bsv_expression",
-          "named": true
-        },
-        {
-          "type": "bsv_unop",
+          "type": "bsv_varDo",
           "named": true
         }
       ]
@@ -1003,6 +1549,14 @@
       "required": true,
       "types": [
         {
+          "type": "bsv_externCImport",
+          "named": true
+        },
+        {
+          "type": "bsv_externModuleImport",
+          "named": true
+        },
+        {
           "type": "bsv_functionDef",
           "named": true
         },
@@ -1012,10 +1566,6 @@
         },
         {
           "type": "bsv_moduleDef",
-          "named": true
-        },
-        {
-          "type": "bsv_topVarDecl",
           "named": true
         },
         {
@@ -1033,6 +1583,25 @@
         {
           "type": "bsv_varAssign",
           "named": true
+        },
+        {
+          "type": "bsv_varDecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_parFsmStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_fsmStmt",
+          "named": true
         }
       ]
     }
@@ -1047,6 +1616,10 @@
       "types": [
         {
           "type": "bsv_constantPattern",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
           "named": true
         },
         {
@@ -1104,6 +1677,25 @@
     "fields": {}
   },
   {
+    "type": "bsv_regWrite",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_lValue",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_returnStmt",
     "named": true,
     "fields": {},
@@ -1113,6 +1705,87 @@
       "types": [
         {
           "type": "bsv_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_rule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_actionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_ruleCond",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_ruleCond",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_condPredicate",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_rulesExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_expressionStmt",
+          "named": true
+        },
+        {
+          "type": "bsv_rule",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_schedulingAnnotation",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bsv_seqFsmStmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_fsmStmt",
           "named": true
         }
       ]
@@ -1249,10 +1922,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_interfaceStmt",
           "named": true
         },
         {
@@ -1297,25 +1974,6 @@
     }
   },
   {
-    "type": "bsv_topVarDecl",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "bsv_typeConcrete",
-          "named": true
-        },
-        {
-          "type": "bsv_varInit",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "bsv_tuplePattern",
     "named": true,
     "fields": {},
@@ -1339,6 +1997,10 @@
       "required": true,
       "types": [
         {
+          "type": "bsv_macroRef",
+          "named": true
+        },
+        {
           "type": "bsv_type",
           "named": true
         },
@@ -1354,7 +2016,7 @@
     }
   },
   {
-    "type": "bsv_typeConcrete",
+    "type": "bsv_typeAssertion",
     "named": true,
     "fields": {},
     "children": {
@@ -1362,15 +2024,15 @@
       "required": true,
       "types": [
         {
-          "type": "bsv_typeConcrete",
+          "type": "bsv_bitConcat",
           "named": true
         },
         {
-          "type": "bsv_typeConcreteIde",
+          "type": "bsv_expression",
           "named": true
         },
         {
-          "type": "bsv_typeNat",
+          "type": "bsv_type",
           "named": true
         }
       ]
@@ -1379,7 +2041,17 @@
   {
     "type": "bsv_typeConcreteIde",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "bsv_packageIde",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bsv_typeDef",
@@ -1680,6 +2352,25 @@
     }
   },
   {
+    "type": "bsv_unaryExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_unop",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_unionMember",
     "named": true,
     "fields": {},
@@ -1727,6 +2418,21 @@
     }
   },
   {
+    "type": "bsv_valueOfExpr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bsv_varAssign",
     "named": true,
     "fields": {},
@@ -1741,6 +2447,10 @@
         {
           "type": "bsv_lValue",
           "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
         }
       ]
     }
@@ -1754,11 +2464,57 @@
       "required": true,
       "types": [
         {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
           "type": "bsv_type",
           "named": true
         },
         {
           "type": "bsv_varInit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_varDeclDo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_pattern",
+          "named": true
+        },
+        {
+          "type": "bsv_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bsv_varDo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_lValue",
           "named": true
         }
       ]
@@ -1792,6 +2548,14 @@
     "named": false
   },
   {
+    "type": "\"BDPI\"",
+    "named": false
+  },
+  {
+    "type": "\"BVI\"",
+    "named": false
+  },
+  {
     "type": "#",
     "named": false
   },
@@ -1809,6 +2573,10 @@
   },
   {
     "type": "&&&",
+    "named": false
+  },
+  {
+    "type": "'",
     "named": false
   },
   {
@@ -1932,7 +2700,19 @@
     "named": false
   },
   {
-    "type": "TODO",
+    "type": "C",
+    "named": false
+  },
+  {
+    "type": "CF",
+    "named": false
+  },
+  {
+    "type": "SB",
+    "named": false
+  },
+  {
+    "type": "SBR",
     "named": false
   },
   {
@@ -1952,7 +2732,19 @@
     "named": false
   },
   {
+    "type": "_",
+    "named": false
+  },
+  {
     "type": "action",
+    "named": false
+  },
+  {
+    "type": "actionvalue",
+    "named": false
+  },
+  {
+    "type": "ancestor",
     "named": false
   },
   {
@@ -1962,6 +2754,14 @@
   {
     "type": "bit",
     "named": false
+  },
+  {
+    "type": "break",
+    "named": false
+  },
+  {
+    "type": "bsv_macroRef",
+    "named": true
   },
   {
     "type": "bsv_sign",
@@ -1980,7 +2780,19 @@
     "named": false
   },
   {
+    "type": "continue",
+    "named": false
+  },
+  {
     "type": "default",
+    "named": false
+  },
+  {
+    "type": "default_clock",
+    "named": false
+  },
+  {
+    "type": "default_reset",
     "named": false
   },
   {
@@ -2000,11 +2812,19 @@
     "named": false
   },
   {
+    "type": "enable",
+    "named": false
+  },
+  {
     "type": "end",
     "named": false
   },
   {
     "type": "endaction",
+    "named": false
+  },
+  {
+    "type": "endactionvalue",
     "named": false
   },
   {
@@ -2036,6 +2856,22 @@
     "named": false
   },
   {
+    "type": "endpar",
+    "named": false
+  },
+  {
+    "type": "endrule",
+    "named": false
+  },
+  {
+    "type": "endrules",
+    "named": false
+  },
+  {
+    "type": "endseq",
+    "named": false
+  },
+  {
     "type": "endtypeclass",
     "named": false
   },
@@ -2064,11 +2900,27 @@
     "named": false
   },
   {
+    "type": "input_clock",
+    "named": false
+  },
+  {
+    "type": "input_reset",
+    "named": false
+  },
+  {
     "type": "instance",
     "named": false
   },
   {
     "type": "interface",
+    "named": false
+  },
+  {
+    "type": "let",
+    "named": false
+  },
+  {
+    "type": "match",
     "named": false
   },
   {
@@ -2088,7 +2940,19 @@
     "named": false
   },
   {
+    "type": "output_clock",
+    "named": false
+  },
+  {
+    "type": "output_reset",
+    "named": false
+  },
+  {
     "type": "package",
+    "named": false
+  },
+  {
+    "type": "par",
     "named": false
   },
   {
@@ -2096,7 +2960,23 @@
     "named": false
   },
   {
+    "type": "path",
+    "named": false
+  },
+  {
+    "type": "port",
+    "named": false
+  },
+  {
     "type": "provisos",
+    "named": false
+  },
+  {
+    "type": "ready",
+    "named": false
+  },
+  {
+    "type": "repeat",
     "named": false
   },
   {
@@ -2105,6 +2985,26 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "rule",
+    "named": false
+  },
+  {
+    "type": "rules",
+    "named": false
+  },
+  {
+    "type": "same_family",
+    "named": false
+  },
+  {
+    "type": "schedule",
+    "named": false
+  },
+  {
+    "type": "seq",
     "named": false
   },
   {
@@ -2129,6 +3029,14 @@
   },
   {
     "type": "union",
+    "named": false
+  },
+  {
+    "type": "valueOf",
+    "named": false
+  },
+  {
+    "type": "valueof",
     "named": false
   },
   {

@@ -11,23 +11,38 @@ endpackage
 -------------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_topVarDecl
-         (bsv_typeConcrete (bsv_typeConcreteIde)
-                           (bsv_typeConcrete (bsv_typeConcreteIde))
-                           (bsv_typeConcrete (bsv_typeConcreteIde)))
-         (bsv_varInit
-            (bsv_expression
-               (bsv_exprPrimary (bsv_intLiteral (bsv_unsizedIntLiteral)))))
-         (bsv_varInit
-            (bsv_arrayDims
-               (bsv_expression
-                  (bsv_exprPrimary (bsv_intLiteral (bsv_unsizedIntLiteral))))))
-         (bsv_varInit
-            (bsv_arrayDims
-               (bsv_expression
-                  (bsv_exprPrimary (bsv_intLiteral (bsv_unsizedIntLiteral))))
-               (bsv_expression
-                  (bsv_exprPrimary (bsv_intLiteral (bsv_unsizedIntLiteral)))))
-            (bsv_expression (bsv_exprPrimary))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_varDecl
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde))
+        (bsv_type
+          (bsv_typeIde
+            (bsv_typeConcreteIde)))
+        (bsv_type
+          (bsv_typeIde
+            (bsv_typeConcreteIde))))
+      (bsv_varInit
+        (bsv_expression
+          (bsv_exprPrimary
+            (bsv_intLiteral
+              (bsv_unsizedIntLiteral)))))
+      (bsv_varInit
+        (bsv_arrayDims
+          (bsv_expression
+            (bsv_exprPrimary
+              (bsv_intLiteral
+                (bsv_unsizedIntLiteral))))))
+      (bsv_varInit
+        (bsv_arrayDims
+          (bsv_expression
+            (bsv_exprPrimary
+              (bsv_intLiteral
+                (bsv_unsizedIntLiteral))))
+          (bsv_expression
+            (bsv_exprPrimary
+              (bsv_intLiteral
+                (bsv_unsizedIntLiteral)))))
+        (bsv_expression
+          (bsv_exprPrimary))))))

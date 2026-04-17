@@ -17,32 +17,55 @@ endpackage
 ---------------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_typeclassDef
-         (bsv_typeclassIde)
-         (bsv_typeFormals
-            (bsv_typeVarIde)
-            (bsv_typeVarIde)
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeclassDef
+      (bsv_typeclassIde)
+      (bsv_typeFormals
+        (bsv_typeVarIde)
+        (bsv_typeVarIde)
+        (bsv_typeVarIde))
+      (bsv_provisos
+        (bsv_proviso
+          (bsv_typeclassIde)
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeVarIde)))
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeVarIde)))))
+      (bsv_typedepends
+        (bsv_typedepend
+          (bsv_typelist
             (bsv_typeVarIde))
-         (bsv_provisos (bsv_proviso (bsv_typeclassIde)
-                                    (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-                                    (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-         (bsv_typedepends
-            (bsv_typedepend (bsv_typelist (bsv_typeVarIde))
-                            (bsv_typelist (bsv_typeVarIde) (bsv_typeVarIde))))
-         (bsv_overloadedDef
-            (bsv_functionProto (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-                               (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-         (bsv_overloadedDef
-            (bsv_moduleProto
-               (bsv_moduleFormalArgs
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                  (bsv_type (bsv_typeIde (bsv_typeVarIde)))))))
-         (bsv_overloadedDef
-            (bsv_varDecl
-               (bsv_type (bsv_typeIde (bsv_typeVarIde))) (bsv_varInit)))
-         (bsv_typeclassIde))))
+          (bsv_typelist
+            (bsv_typeVarIde)
+            (bsv_typeVarIde))))
+      (bsv_overloadedDef
+        (bsv_functionProto
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeVarIde)))
+          (bsv_functionFormal
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde))))))
+      (bsv_overloadedDef
+        (bsv_moduleProto
+          (bsv_moduleFormalArgs
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeVarIde)))))))
+      (bsv_overloadedDef
+        (bsv_varDecl
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeVarIde)))
+          (bsv_varInit)))
+      (bsv_typeclassIde))))
 
 ==============================
 Typeclass instance declaration
@@ -62,33 +85,55 @@ endpackage
 ------------------------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_typeclassInstanceDef
-         (bsv_typeclassIde)
-         (bsv_type
-            (bsv_typeIde (bsv_typeConcreteIde))
-            (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-            (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-         (bsv_provisos
-            (bsv_proviso
-               (bsv_typeclassIde)
-               (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-               (bsv_type (bsv_typeIde (bsv_typeConcreteIde)))))
-         (bsv_functionDef
-            (bsv_functionProto
-               (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-               (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-            (bsv_functionBody
-               (bsv_functionBodyStmt
-                  (bsv_returnStmt
-                     (bsv_expression
-                        (bsv_exprPrimary
-                           (bsv_intLiteral (bsv_unsizedIntLiteral))))))))
-         (bsv_moduleDef
-            (bsv_moduleProto
-               (bsv_moduleFormalArgs
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                            (bsv_type (bsv_typeIde (bsv_typeVarIde)))))))
-         (bsv_varAssign (bsv_lValue) (bsv_expression (bsv_exprPrimary)))
-         (bsv_typeclassIde))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeclassInstanceDef
+      (bsv_typeclassIde)
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde))
+        (bsv_type
+          (bsv_typeIde
+            (bsv_typeVarIde)))
+        (bsv_type
+          (bsv_typeIde
+            (bsv_typeConcreteIde))))
+      (bsv_provisos
+        (bsv_proviso
+          (bsv_typeclassIde)
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeVarIde)))
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde)))))
+      (bsv_functionDef
+        (bsv_functionProto
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeVarIde)))
+          (bsv_functionFormal
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde)))))
+        (bsv_functionBody
+          (bsv_functionBodyStmt
+            (bsv_returnStmt
+              (bsv_expression
+                (bsv_exprPrimary
+                  (bsv_intLiteral
+                    (bsv_unsizedIntLiteral))))))))
+      (bsv_moduleDef
+        (bsv_moduleProto
+          (bsv_moduleFormalArgs
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeVarIde)))))))
+      (bsv_varAssign
+        (bsv_lValue)
+        (bsv_expression
+          (bsv_exprPrimary)))
+      (bsv_typeclassIde))))

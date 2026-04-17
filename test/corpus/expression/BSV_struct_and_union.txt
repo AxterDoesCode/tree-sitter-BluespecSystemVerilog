@@ -11,36 +11,42 @@ endpackage
 -----------------
 
 (bsv_package
-   (bsv_packageIde)
-      (bsv_packageStmt
-         (bsv_topVarDecl
-            (bsv_typeConcrete (bsv_typeConcreteIde))
-            (bsv_varInit
-               (bsv_expression
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_varDecl
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde)))
+      (bsv_varInit
+        (bsv_expression
+          (bsv_exprPrimary
+            (bsv_structExpr
+              (bsv_typeConcreteIde)
+              (bsv_memberBind
+                (bsv_expression
                   (bsv_exprPrimary
-                     (bsv_structExpr
-                        (bsv_typeConcreteIde)
-                        (bsv_memberBind
-                           (bsv_expression
-                              (bsv_exprPrimary
-                                 (bsv_intLiteral (bsv_unsizedIntLiteral)))))
-                        (bsv_memberBind
-                           (bsv_expression
-                              (bsv_exprPrimary
-                                 (bsv_intLiteral (bsv_unsizedIntLiteral)))))
-                        (bsv_memberBind
-                           (bsv_expression
-                              (bsv_exprPrimary
-                                 (bsv_structExpr
-                                    (bsv_typeConcreteIde)
-                                       (bsv_memberBind
-                                          (bsv_expression
-                                             (bsv_exprPrimary
-                                                (bsv_intLiteral (bsv_unsizedIntLiteral)))))))))
-                        (bsv_memberBind
-                           (bsv_expression
-                              (bsv_exprPrimary (bsv_intLiteral
-                                 (bsv_unsizedIntLiteral))))))))))))
+                    (bsv_intLiteral
+                      (bsv_unsizedIntLiteral)))))
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_intLiteral
+                      (bsv_unsizedIntLiteral)))))
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_structExpr
+                      (bsv_typeConcreteIde)
+                      (bsv_memberBind
+                        (bsv_expression
+                          (bsv_exprPrimary
+                            (bsv_intLiteral
+                              (bsv_unsizedIntLiteral)))))))))
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_intLiteral
+                      (bsv_unsizedIntLiteral))))))))))))
 
 =======================
 Tagged union expression
@@ -57,46 +63,58 @@ endpackage
 -----------------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_topVarDecl
-         (bsv_typeConcrete (bsv_typeConcreteIde))
-         (bsv_varInit
-            (bsv_expression
-               (bsv_exprPrimary
-                 (bsv_taggedUnionExpr
-                    (bsv_memberBind
-                       (bsv_expression
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_varDecl
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde)))
+      (bsv_varInit
+        (bsv_expression
+          (bsv_exprPrimary
+            (bsv_taggedUnionExpr
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_intLiteral
+                      (bsv_unsizedIntLiteral)))))
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_intLiteral
+                      (bsv_unsizedIntLiteral)))))
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_structExpr
+                      (bsv_typeConcreteIde)
+                      (bsv_memberBind
+                        (bsv_expression
                           (bsv_exprPrimary
-                             (bsv_intLiteral (bsv_unsizedIntLiteral)))))
-                    (bsv_memberBind
-                       (bsv_expression
-                          (bsv_exprPrimary
-                             (bsv_intLiteral (bsv_unsizedIntLiteral)))))
-                    (bsv_memberBind
-                       (bsv_expression
-                          (bsv_exprPrimary
-                             (bsv_structExpr
-                                (bsv_typeConcreteIde)
-                                (bsv_memberBind
-                                   (bsv_expression
-                                      (bsv_exprPrimary
-                                         (bsv_intLiteral
-                                            (bsv_unsizedIntLiteral)))))))))
-                    (bsv_memberBind
-                       (bsv_expression
-                          (bsv_exprPrimary
-                             (bsv_intLiteral (bsv_unsizedIntLiteral)))))))))))
-   (bsv_packageStmt
-      (bsv_topVarDecl
-         (bsv_typeConcrete (bsv_typeConcreteIde))
-         (bsv_varInit
-            (bsv_expression (bsv_exprPrimary (bsv_taggedUnionExpr))))))
-   (bsv_packageStmt
-      (bsv_topVarDecl
-         (bsv_typeConcrete (bsv_typeConcreteIde))
-         (bsv_varInit
-            (bsv_expression
-               (bsv_exprPrimary
-                  (bsv_taggedUnionExpr
-                     (bsv_exprPrimary (bsv_realLiteral)))))))))
+                            (bsv_intLiteral
+                              (bsv_unsizedIntLiteral)))))))))
+              (bsv_memberBind
+                (bsv_expression
+                  (bsv_exprPrimary
+                    (bsv_intLiteral
+                      (bsv_unsizedIntLiteral)))))))))))
+  (bsv_packageStmt
+    (bsv_varDecl
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde)))
+      (bsv_varInit
+        (bsv_expression
+          (bsv_exprPrimary
+            (bsv_taggedUnionExpr))))))
+  (bsv_packageStmt
+    (bsv_varDecl
+      (bsv_type
+        (bsv_typeIde
+          (bsv_typeConcreteIde)))
+      (bsv_varInit
+        (bsv_expression
+          (bsv_exprPrimary
+            (bsv_taggedUnionExpr
+              (bsv_exprPrimary
+                (bsv_realLiteral)))))))))
