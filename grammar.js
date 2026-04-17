@@ -53,7 +53,7 @@ forIncr = ($) => commaSepList1(seq($._bsv_identifier, choice('=', '<='),
 // BSV grammar
 ////////////////////////////////////////////////////////////////////////////////
 module.exports = grammar({
-  name: 'BluespecSystemVerilog',
+  name: 'bsv',
 
   word: $ => $._bsv_word,
 
