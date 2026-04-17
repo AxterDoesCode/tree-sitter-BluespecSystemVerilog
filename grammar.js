@@ -440,7 +440,10 @@ module.exports = grammar({
     bsv_moduleFormalParam: $ => choice(
       seq(optional($.bsv_attributeInstances),
         optional('parameter'),
-        $.bsv_type, alias($._bsv_identifier, $.bsv_paramIde)),
+        $.bsv_type,
+        // Plain `_` and multi-underscore names (e.g. `__`, `___`) are used
+        // as placeholder/anonymous parameter names in BSV module headers.
+        choice(alias($._bsv_identifier, $.bsv_paramIde), '_', $.bsv_wildcardName)),
       // function-typed parameter: `function Type name (args)`
       seq(optional($.bsv_attributeInstances),
         'function', $.bsv_type, alias($._bsv_identifier, $.bsv_functionIde),
@@ -781,7 +784,11 @@ module.exports = grammar({
         $.bsv_expression)),
       prec.left(7, seq($.bsv_expression, '|', $.bsv_expression)),
       prec.left(6, seq($.bsv_expression, '&&', $.bsv_expression)),
-      prec.left(5, seq($.bsv_expression, '||', $.bsv_expression))
+      prec.left(5, seq($.bsv_expression, '||', $.bsv_expression)),
+      // `&&&` is primarily the guard/pattern separator in condPredicate, but
+      // BSV code also uses it as a lowest-precedence AND inside ordinary
+      // expressions (e.g. `!(x >= 0 &&& x <= 7)`).
+      prec.left(4, seq($.bsv_expression, '&&&', $.bsv_expression))
     ),
 
     bsv_unop: $ =>
@@ -1065,6 +1072,10 @@ module.exports = grammar({
       /\\[^ \t\r\n]+/
     ),
     _bsv_Identifier: $ => /[$_]*[A-Z][a-zA-Z0-9$_]*/,
+    // Placeholder name consisting of two or more underscores (e.g. `__`,
+    // `___`). Single `_` keeps its special wildcard meaning via the literal
+    // `'_'` token used elsewhere in the grammar.
+    bsv_wildcardName: $ => /__+/,
     // A unified "word" regex used only by the `word:` property below so that
     // tree-sitter can treat string-literal keywords as preferring over the
     // identifier token when both match. Not used as a rule anywhere else.

@@ -3497,13 +3497,26 @@
               "name": "bsv_type"
             },
             {
-              "type": "ALIAS",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_bsv_identifier"
-              },
-              "named": true,
-              "value": "bsv_paramIde"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_paramIde"
+                },
+                {
+                  "type": "STRING",
+                  "value": "_"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_wildcardName"
+                }
+              ]
             }
           ]
         },
@@ -7937,6 +7950,27 @@
               }
             ]
           }
+        },
+        {
+          "type": "PREC_LEFT",
+          "value": 4,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              },
+              {
+                "type": "STRING",
+                "value": "&&&"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              }
+            ]
+          }
         }
       ]
     },
@@ -11436,6 +11470,10 @@
     "_bsv_Identifier": {
       "type": "PATTERN",
       "value": "[$_]*[A-Z][a-zA-Z0-9$_]*"
+    },
+    "bsv_wildcardName": {
+      "type": "PATTERN",
+      "value": "__+"
     },
     "_bsv_word": {
       "type": "PATTERN",
