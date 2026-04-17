@@ -46,12 +46,15 @@ endpackage
           (bsv_type
             (bsv_typeIde
               (bsv_typeVarIde)))
+          (bsv_functionIde)
           (bsv_functionFormal
             (bsv_type
               (bsv_typeIde
-                (bsv_typeVarIde))))))
+                (bsv_typeVarIde)))
+            (bsv_paramIde))))
       (bsv_overloadedDef
         (bsv_moduleProto
+          (bsv_moduleIde)
           (bsv_moduleFormalArgs
             (bsv_type
               (bsv_typeIde
@@ -64,7 +67,8 @@ endpackage
           (bsv_type
             (bsv_typeIde
               (bsv_typeVarIde)))
-          (bsv_varInit)))
+          (bsv_varInit
+            (bsv_varIde))))
       (bsv_typeclassIde))))
 
 ==============================
@@ -112,10 +116,12 @@ endpackage
           (bsv_type
             (bsv_typeIde
               (bsv_typeVarIde)))
+          (bsv_functionIde)
           (bsv_functionFormal
             (bsv_type
               (bsv_typeIde
-                (bsv_typeConcreteIde)))))
+                (bsv_typeConcreteIde)))
+            (bsv_paramIde)))
         (bsv_functionBody
           (bsv_functionBodyStmt
             (bsv_returnStmt
@@ -125,6 +131,7 @@ endpackage
                     (bsv_unsizedIntLiteral))))))))
       (bsv_moduleDef
         (bsv_moduleProto
+          (bsv_moduleIde)
           (bsv_moduleFormalArgs
             (bsv_type
               (bsv_typeIde

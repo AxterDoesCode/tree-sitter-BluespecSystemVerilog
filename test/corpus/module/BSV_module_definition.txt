@@ -14,36 +14,77 @@ endpackage
 -----------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_moduleDef
-         (bsv_moduleProto
-            (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                      (bsv_type (bsv_typeNat))
-                      (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-            (bsv_moduleFormalParams
-               (bsv_moduleFormalParam
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-               (bsv_moduleFormalParam
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                            (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-                            (bsv_type (bsv_typeIde (bsv_typeConcreteIde)))
-                            (bsv_type (bsv_typeNat)))))
-            (bsv_moduleFormalArgs
-               (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                         (bsv_type (bsv_typeNat))
-                         (bsv_type (bsv_typeNat))
-                         (bsv_type (bsv_typeNat))
-                         (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-                         (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-                         (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-            (bsv_provisos
-               (bsv_proviso (bsv_typeclassIde)
-                            (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-               (bsv_proviso (bsv_typeclassIde)
-                            (bsv_type (bsv_typeIde (bsv_typeConcreteIde)))
-                            (bsv_type (bsv_typeNat))
-                            (bsv_type (bsv_typeNat))
-                            (bsv_type (bsv_typeNat))
-                            (bsv_type (bsv_typeIde (bsv_typeVarIde)))
-                            (bsv_type (bsv_typeIde (bsv_typeVarIde)))))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_moduleDef
+      (bsv_moduleProto
+        (bsv_type
+          (bsv_typeIde
+            (bsv_typeConcreteIde))
+          (bsv_type
+            (bsv_typeNat))
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))))
+        (bsv_moduleIde)
+        (bsv_moduleFormalParams
+          (bsv_moduleFormalParam
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde)))
+            (bsv_paramIde))
+          (bsv_moduleFormalParam
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeVarIde)))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde)))
+              (bsv_type
+                (bsv_typeNat)))
+            (bsv_paramIde)))
+        (bsv_moduleFormalArgs
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeNat))
+            (bsv_type
+              (bsv_typeNat))
+            (bsv_type
+              (bsv_typeNat))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))))
+        (bsv_provisos
+          (bsv_proviso
+            (bsv_typeclassIde)
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde))))
+          (bsv_proviso
+            (bsv_typeclassIde)
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde)))
+            (bsv_type
+              (bsv_typeNat))
+            (bsv_type
+              (bsv_typeNat))
+            (bsv_type
+              (bsv_typeNat))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))))))))

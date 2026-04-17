@@ -12,5 +12,8 @@ endpackage
 ------------------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt (bsv_moduleDef (bsv_moduleProto))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_moduleDef
+      (bsv_moduleProto
+        (bsv_moduleIde)))))

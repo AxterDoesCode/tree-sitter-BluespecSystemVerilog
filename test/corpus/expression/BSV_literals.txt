@@ -20,6 +20,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_intLiteral
@@ -30,6 +31,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_intLiteral
@@ -42,6 +44,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_intLiteral
@@ -70,6 +73,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_realLiteral))))))
@@ -79,6 +83,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_realLiteral))))))
@@ -88,6 +93,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_realLiteral)))))))
@@ -112,6 +118,7 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary
             (bsv_stringLiteral)))))))
@@ -136,5 +143,6 @@ endpackage
         (bsv_typeIde
           (bsv_typeConcreteIde)))
       (bsv_varInit
+        (bsv_varIde)
         (bsv_expression
           (bsv_exprPrimary))))))

@@ -41,6 +41,10 @@
  (#match? @type.builtin
   "^(Bit|UInt|Int|Bool|Integer|Real|String|Char|Void|Maybe|Tuple[0-9]+|Vector|List|Action|ActionValue|Rules|Reg|Wire|PulseWire|BypassWire|RWire|DWire|CReg|Empty|Clock|Reset|FIFO|FIFOF|SizedFIFO|SizedFIFOF|BypassFIFO|BypassFIFOF|PipelineFIFO|FF|Server|Client|Get|Put|Fmt|Bits|Eq|Ord|Arith|Literal|Bounded|FShow|Add|Mul|Div|Log|Min|Max|TAdd|TSub|TMul|TDiv|TLog|TExp|TMin|TMax)$"))
 
+; Boolean literals (written as bare identifiers in exprPrimary)
+((bsv_exprPrimary) @boolean
+ (#any-of? @boolean "True" "False"))
+
 ; Bare type keywords used in declarations
 "bit" @type.builtin
 "void" @type.builtin
@@ -120,6 +124,7 @@
   "type"
   "numeric"
   "provisos"
+  "dependencies"
   "valueOf"
   "valueof"
   "determines"
@@ -150,6 +155,7 @@
   "SB"
   "SBR"
   "CF"
+  "C"
 ] @keyword
 
 ; don't-care expression
@@ -223,24 +229,39 @@
 ; Tagged union patterns
 (bsv_taggedUnionPattern) @constructor
 
-; Struct-member bind: `field : expr` — the `field` side is a property
-(bsv_memberBind
-  .
-  (_) @property)
-
-; Field select: `expr.field`
-(bsv_fieldSelect
-  (bsv_exprPrimary)
-  .
-  (_) @property)
-
-; Attribute spec content: `(* name = expr *)` — name is an attribute
-(bsv_attrSpec
-  (bsv_attrName) @attribute)
-
-; Enum elements — constructor-like constants
-(bsv_typedefEnumElement) @constant
+; Struct-member bind / field select / struct declaration member
+(bsv_memberIde) @property
 
 ; Proviso typeclass name
 (bsv_proviso
   (bsv_typeclassIde) @type)
+
+; `deriving (Class1, Class2, ...)` — deriving list members are typeclass names
+(bsv_derives
+  (bsv_typeclassIde) @type)
+
+; Enum elements — constructor-like constants
+(bsv_typedefEnumElement) @constant
+
+; Definition-site names
+(bsv_moduleIde) @function
+(bsv_methodIde) @function.method
+(bsv_functionIde) @function
+(bsv_ruleIde) @label
+(bsv_interfaceIde) @variable
+
+; Parameters
+(bsv_paramIde) @variable.parameter
+
+; Variable declarations / bindings
+(bsv_varIde) @variable
+
+; Call sites — a function call's callee that's a bare identifier exprPrimary
+(bsv_functionCall
+  (bsv_exprPrimary) @function.call)
+
+; BSV system tasks / functions start with `$` — e.g. $display, $finish.
+; The callee in a functionCall is the inner bare-identifier exprPrimary.
+((bsv_functionCall
+  (bsv_exprPrimary) @function.builtin)
+ (#match? @function.builtin "^\\$"))

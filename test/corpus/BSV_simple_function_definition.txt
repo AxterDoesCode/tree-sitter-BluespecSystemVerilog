@@ -20,10 +20,12 @@ endpackage
         (bsv_type
           (bsv_typeIde
             (bsv_typeConcreteIde)))
+        (bsv_functionIde)
         (bsv_functionFormal
           (bsv_type
             (bsv_typeIde
-              (bsv_typeConcreteIde)))))
+              (bsv_typeConcreteIde)))
+          (bsv_paramIde)))
       (bsv_functionBody
         (bsv_functionBodyStmt
           (bsv_returnStmt

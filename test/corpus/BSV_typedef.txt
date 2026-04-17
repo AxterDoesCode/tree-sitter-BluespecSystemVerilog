@@ -16,17 +16,27 @@ endpackage
 ------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_typeDef
-         (bsv_typedefEnum
-            (bsv_typedefEnumElement (bsv_intLiteral (bsv_unsizedIntLiteral)))
-            (bsv_typedefEnumElement)
-            (bsv_typedefEnumElement (bsv_intLiteral (bsv_unsizedIntLiteral)))
-            (bsv_typedefEnumElement (bsv_intLiteral (bsv_unsizedIntLiteral))
-                                    (bsv_intLiteral (bsv_unsizedIntLiteral))
-                                    (bsv_intLiteral (bsv_unsizedIntLiteral)))
-            (bsv_derives (bsv_typeclassIde))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeDef
+      (bsv_typedefEnum
+        (bsv_typedefEnumElement
+          (bsv_intLiteral
+            (bsv_unsizedIntLiteral)))
+        (bsv_typedefEnumElement)
+        (bsv_typedefEnumElement
+          (bsv_intLiteral
+            (bsv_unsizedIntLiteral)))
+        (bsv_typedefEnumElement
+          (bsv_intLiteral
+            (bsv_unsizedIntLiteral))
+          (bsv_intLiteral
+            (bsv_unsizedIntLiteral))
+          (bsv_intLiteral
+            (bsv_unsizedIntLiteral)))
+        (bsv_derives
+          (bsv_typeclassIde))))))
+
 ==============
 Typedef struct
 ==============
@@ -44,23 +54,38 @@ endpackage
 --------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_typeDef
-         (bsv_typedefStruct
-            (bsv_structMember
-               (bsv_type
-                  (bsv_typeIde (bsv_typeConcreteIde))
-                  (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-            (bsv_structMember
-               (bsv_type
-                  (bsv_typeIde (bsv_typeConcreteIde))
-                  (bsv_type (bsv_typeNat))))
-            (bsv_structMember
-               (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-               (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-            (bsv_typeConcreteIde)
-            (bsv_typeFormals (bsv_typeVarIde) (bsv_typeVarIde))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeDef
+      (bsv_typedefStruct
+        (bsv_structMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde))))
+          (bsv_memberIde))
+        (bsv_structMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeNat)))
+          (bsv_memberIde))
+        (bsv_structMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde))))
+          (bsv_memberIde))
+        (bsv_typeConcreteIde)
+        (bsv_typeFormals
+          (bsv_typeVarIde)
+          (bsv_typeVarIde))))))
+
 ===============
 Typedef synonym
 ===============
@@ -74,13 +99,18 @@ endpackage
 ---------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_typeDef
-         (bsv_typedefSynonym
-            (bsv_type (bsv_typeIde (bsv_typeConcreteIde)))
-            (bsv_typeConcreteIde)
-            (bsv_typeFormals (bsv_typeVarIde) (bsv_typeVarIde))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeDef
+      (bsv_typedefSynonym
+        (bsv_type
+          (bsv_typeIde
+            (bsv_typeConcreteIde)))
+        (bsv_typeConcreteIde)
+        (bsv_typeFormals
+          (bsv_typeVarIde)
+          (bsv_typeVarIde))))))
+
 ====================
 Typedef tagged union
 ====================
@@ -98,22 +128,37 @@ endpackage
 --------------------
 
 (bsv_package
-   (bsv_packageIde)
-      (bsv_packageStmt
-         (bsv_typeDef
-            (bsv_typedefTaggedUnion
-               (bsv_unionMember
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                            (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-               (bsv_unionMember
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                            (bsv_type (bsv_typeNat))))
-               (bsv_unionMember
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                            (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-               (bsv_typeConcreteIde)
-               (bsv_typeFormals (bsv_typeVarIde) (bsv_typeVarIde))
-               (bsv_derives (bsv_typeclassIde))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeDef
+      (bsv_typedefTaggedUnion
+        (bsv_unionMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))))
+        (bsv_unionMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeNat))))
+        (bsv_unionMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))))
+        (bsv_typeConcreteIde)
+        (bsv_typeFormals
+          (bsv_typeVarIde)
+          (bsv_typeVarIde))
+        (bsv_derives
+          (bsv_typeclassIde))))))
+
 ===============
 Complex typedef
 ===============
@@ -146,32 +191,65 @@ endpackage
 ---------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_typeDef
-         (bsv_typedefStruct
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_typeDef
+      (bsv_typedefStruct
+        (bsv_structMember
+          (bsv_subStruct
             (bsv_structMember
-               (bsv_subStruct
-                  (bsv_structMember
-                     (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                               (bsv_type (bsv_typeIde (bsv_typeVarIde)))))
-                     (bsv_structMember
-                        (bsv_subUnion
-                           (bsv_unionMember
-                              (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                                        (bsv_type (bsv_typeNat))))
-                           (bsv_unionMember
-                              (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))))))
-            (bsv_structMember (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde))
+                (bsv_type
+                  (bsv_typeIde
+                    (bsv_typeVarIde))))
+              (bsv_memberIde))
             (bsv_structMember
-               (bsv_subUnion
-                  (bsv_unionMember (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-                  (bsv_unionMember
-                     (bsv_subUnion
-                        (bsv_unionMember
-                           (bsv_subStruct
-                              (bsv_structMember (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))
-                              (bsv_structMember (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))))
-                     (bsv_unionMember (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))))))
-            (bsv_typeConcreteIde)
-            (bsv_typeFormals (bsv_typeVarIde) (bsv_typeVarIde))))))
+              (bsv_subUnion
+                (bsv_unionMember
+                  (bsv_type
+                    (bsv_typeIde
+                      (bsv_typeConcreteIde))
+                    (bsv_type
+                      (bsv_typeNat))))
+                (bsv_unionMember
+                  (bsv_type
+                    (bsv_typeIde
+                      (bsv_typeConcreteIde)))))
+              (bsv_memberIde)))
+          (bsv_memberIde))
+        (bsv_structMember
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde)))
+          (bsv_memberIde))
+        (bsv_structMember
+          (bsv_subUnion
+            (bsv_unionMember
+              (bsv_type
+                (bsv_typeIde
+                  (bsv_typeConcreteIde))))
+            (bsv_unionMember
+              (bsv_subUnion
+                (bsv_unionMember
+                  (bsv_subStruct
+                    (bsv_structMember
+                      (bsv_type
+                        (bsv_typeIde
+                          (bsv_typeConcreteIde)))
+                      (bsv_memberIde))
+                    (bsv_structMember
+                      (bsv_type
+                        (bsv_typeIde
+                          (bsv_typeConcreteIde)))
+                      (bsv_memberIde))))
+                (bsv_unionMember
+                  (bsv_type
+                    (bsv_typeIde
+                      (bsv_typeConcreteIde)))))))
+          (bsv_memberIde))
+        (bsv_typeConcreteIde)
+        (bsv_typeFormals
+          (bsv_typeVarIde)
+          (bsv_typeVarIde))))))

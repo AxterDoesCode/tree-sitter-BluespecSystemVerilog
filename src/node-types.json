@@ -668,11 +668,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "bsv_exprPrimary",
+          "named": true
+        },
+        {
+          "type": "bsv_memberIde",
           "named": true
         }
       ]
@@ -839,6 +843,10 @@
           "named": true
         },
         {
+          "type": "bsv_functionIde",
+          "named": true
+        },
+        {
           "type": "bsv_functionProto",
           "named": true
         },
@@ -854,11 +862,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
           "type": "bsv_functionType",
+          "named": true
+        },
+        {
+          "type": "bsv_paramIde",
           "named": true
         },
         {
@@ -869,19 +881,32 @@
     }
   },
   {
+    "type": "bsv_functionIde",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bsv_functionProto",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_functionFormal",
           "named": true
         },
         {
+          "type": "bsv_functionIde",
+          "named": true
+        },
+        {
           "type": "bsv_macroRef",
+          "named": true
+        },
+        {
+          "type": "bsv_paramIde",
           "named": true
         },
         {
@@ -901,14 +926,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_functionFormal",
           "named": true
         },
         {
+          "type": "bsv_functionIde",
+          "named": true
+        },
+        {
           "type": "bsv_macroRef",
+          "named": true
+        },
+        {
+          "type": "bsv_paramIde",
           "named": true
         },
         {
@@ -932,6 +965,10 @@
       "types": [
         {
           "type": "bsv_functionFormal",
+          "named": true
+        },
+        {
+          "type": "bsv_functionIde",
           "named": true
         },
         {
@@ -1087,6 +1124,11 @@
     }
   },
   {
+    "type": "bsv_interfaceIde",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bsv_interfaceMemberDecl",
     "named": true,
     "fields": {},
@@ -1152,15 +1194,24 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "bsv_expression",
           "named": true
+        },
+        {
+          "type": "bsv_memberIde",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "bsv_memberIde",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "bsv_methodCall",
@@ -1177,6 +1228,10 @@
         {
           "type": "bsv_expression",
           "named": true
+        },
+        {
+          "type": "bsv_methodIde",
+          "named": true
         }
       ]
     }
@@ -1187,7 +1242,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_actionStmt",
@@ -1206,6 +1261,10 @@
           "named": true
         },
         {
+          "type": "bsv_methodIde",
+          "named": true
+        },
+        {
           "type": "bsv_type",
           "named": true
         }
@@ -1217,9 +1276,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "bsv_paramIde",
+          "named": true
+        },
         {
           "type": "bsv_type",
           "named": true
@@ -1243,6 +1306,11 @@
     }
   },
   {
+    "type": "bsv_methodIde",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bsv_methodProto",
     "named": true,
     "fields": {},
@@ -1252,6 +1320,10 @@
       "types": [
         {
           "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_methodIde",
           "named": true
         },
         {
@@ -1275,6 +1347,10 @@
       "types": [
         {
           "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_paramIde",
           "named": true
         },
         {
@@ -1305,10 +1381,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_moduleActualParamArg",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleIde",
           "named": true
         }
       ]
@@ -1324,6 +1404,10 @@
       "types": [
         {
           "type": "bsv_attributeInstances",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleIde",
           "named": true
         },
         {
@@ -1350,6 +1434,10 @@
           "named": true
         },
         {
+          "type": "bsv_paramIde",
+          "named": true
+        },
+        {
           "type": "bsv_type",
           "named": true
         }
@@ -1370,6 +1458,14 @@
         },
         {
           "type": "bsv_functionFormal",
+          "named": true
+        },
+        {
+          "type": "bsv_functionIde",
+          "named": true
+        },
+        {
+          "type": "bsv_paramIde",
           "named": true
         },
         {
@@ -1395,6 +1491,11 @@
     }
   },
   {
+    "type": "bsv_moduleIde",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bsv_moduleInst",
     "named": true,
     "fields": {},
@@ -1417,6 +1518,10 @@
         {
           "type": "bsv_type",
           "named": true
+        },
+        {
+          "type": "bsv_varIde",
+          "named": true
         }
       ]
     }
@@ -1427,7 +1532,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_moduleFormalArgs",
@@ -1435,6 +1540,10 @@
         },
         {
           "type": "bsv_moduleFormalParams",
+          "named": true
+        },
+        {
+          "type": "bsv_moduleIde",
           "named": true
         },
         {
@@ -1681,6 +1790,11 @@
     }
   },
   {
+    "type": "bsv_paramIde",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bsv_pattern",
     "named": true,
     "fields": {},
@@ -1790,7 +1904,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_actionStmt",
@@ -1802,6 +1916,10 @@
         },
         {
           "type": "bsv_ruleCond",
+          "named": true
+        },
+        {
+          "type": "bsv_ruleIde",
           "named": true
         }
       ]
@@ -1821,6 +1939,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "bsv_ruleIde",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "bsv_rulesExpr",
@@ -1923,9 +2046,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
+        {
+          "type": "bsv_memberIde",
+          "named": true
+        },
         {
           "type": "bsv_subStruct",
           "named": true
@@ -1999,6 +2126,10 @@
           "named": true
         },
         {
+          "type": "bsv_interfaceIde",
+          "named": true
+        },
+        {
           "type": "bsv_type",
           "named": true
         }
@@ -2011,10 +2142,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_interfaceIde",
           "named": true
         },
         {
@@ -2585,6 +2720,10 @@
           "named": true
         },
         {
+          "type": "bsv_varIde",
+          "named": true
+        },
+        {
           "type": "bsv_varInit",
           "named": true
         }
@@ -2614,6 +2753,10 @@
         {
           "type": "bsv_type",
           "named": true
+        },
+        {
+          "type": "bsv_varIde",
+          "named": true
         }
       ]
     }
@@ -2638,12 +2781,17 @@
     }
   },
   {
+    "type": "bsv_varIde",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bsv_varInit",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bsv_arrayDims",
@@ -2651,6 +2799,10 @@
         },
         {
           "type": "bsv_expression",
+          "named": true
+        },
+        {
+          "type": "bsv_varIde",
           "named": true
         }
       ]

@@ -16,28 +16,50 @@ endpackage
 -------------------
 
 (bsv_package
-   (bsv_packageIde)
-   (bsv_packageStmt
-      (bsv_interfaceDecl
-         (bsv_attributeInstances
-            (bsv_attributeInstance
-               (bsv_attrSpec (bsv_attrName) (bsv_expression (bsv_exprPrimary)))))
-         (bsv_typeConcreteIde)
-         (bsv_typeFormals (bsv_typeVarIde) (bsv_typeVarIde))
-         (bsv_interfaceMemberDecl
-            (bsv_methodProto
-               (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                         (bsv_type (bsv_typeIde (bsv_typeVarIde))))
-               (bsv_methodProtoFormal
-                  (bsv_type (bsv_typeIde (bsv_typeVarIde))))
-               (bsv_methodProtoFormal
-                  (bsv_type (bsv_typeIde (bsv_typeConcreteIde))))))
-         (bsv_interfaceMemberDecl
-            (bsv_methodProto
-              (bsv_type
-                (bsv_typeIde
-                  (bsv_typeConcreteIde)))))
-         (bsv_interfaceMemberDecl
-            (bsv_subinterfaceDecl
-               (bsv_type (bsv_typeIde (bsv_typeConcreteIde))
-                         (bsv_type (bsv_typeIde (bsv_typeVarIde)))))))))
+  (bsv_packageIde)
+  (bsv_packageStmt
+    (bsv_interfaceDecl
+      (bsv_attributeInstances
+        (bsv_attributeInstance
+          (bsv_attrSpec
+            (bsv_attrName)
+            (bsv_expression
+              (bsv_exprPrimary)))))
+      (bsv_typeConcreteIde)
+      (bsv_typeFormals
+        (bsv_typeVarIde)
+        (bsv_typeVarIde))
+      (bsv_interfaceMemberDecl
+        (bsv_methodProto
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde))))
+          (bsv_methodIde)
+          (bsv_methodProtoFormal
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde)))
+            (bsv_paramIde))
+          (bsv_methodProtoFormal
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeConcreteIde)))
+            (bsv_paramIde))))
+      (bsv_interfaceMemberDecl
+        (bsv_methodProto
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde)))
+          (bsv_methodIde)))
+      (bsv_interfaceMemberDecl
+        (bsv_subinterfaceDecl
+          (bsv_type
+            (bsv_typeIde
+              (bsv_typeConcreteIde))
+            (bsv_type
+              (bsv_typeIde
+                (bsv_typeVarIde))))
+          (bsv_interfaceIde))))))

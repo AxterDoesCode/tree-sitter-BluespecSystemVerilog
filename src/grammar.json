@@ -540,8 +540,13 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_varIde"
                 },
                 {
                   "type": "SEQ",
@@ -557,8 +562,13 @@
                           "type": "CHOICE",
                           "members": [
                             {
-                              "type": "SYMBOL",
-                              "name": "_bsv_identifier"
+                              "type": "ALIAS",
+                              "content": {
+                                "type": "SYMBOL",
+                                "name": "_bsv_identifier"
+                              },
+                              "named": true,
+                              "value": "bsv_varIde"
                             },
                             {
                               "type": "STRING",
@@ -579,8 +589,13 @@
                                 "type": "CHOICE",
                                 "members": [
                                   {
-                                    "type": "SYMBOL",
-                                    "name": "_bsv_identifier"
+                                    "type": "ALIAS",
+                                    "content": {
+                                      "type": "SYMBOL",
+                                      "name": "_bsv_identifier"
+                                    },
+                                    "named": true,
+                                    "value": "bsv_varIde"
                                   },
                                   {
                                     "type": "STRING",
@@ -621,8 +636,13 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_varIde"
         },
         {
           "type": "CHOICE",
@@ -702,8 +722,13 @@
               "name": "bsv_type"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_varIde"
             },
             {
               "type": "STRING",
@@ -730,8 +755,13 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_varIde"
                 },
                 {
                   "type": "STRING",
@@ -751,8 +781,13 @@
                           "type": "CHOICE",
                           "members": [
                             {
-                              "type": "SYMBOL",
-                              "name": "_bsv_identifier"
+                              "type": "ALIAS",
+                              "content": {
+                                "type": "SYMBOL",
+                                "name": "_bsv_identifier"
+                              },
+                              "named": true,
+                              "value": "bsv_varIde"
                             },
                             {
                               "type": "STRING",
@@ -773,8 +808,13 @@
                                 "type": "CHOICE",
                                 "members": [
                                   {
-                                    "type": "SYMBOL",
-                                    "name": "_bsv_identifier"
+                                    "type": "ALIAS",
+                                    "content": {
+                                      "type": "SYMBOL",
+                                      "name": "_bsv_identifier"
+                                    },
+                                    "named": true,
+                                    "value": "bsv_varIde"
                                   },
                                   {
                                     "type": "STRING",
@@ -1603,8 +1643,13 @@
               "name": "bsv_type"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_memberIde"
             },
             {
               "type": "STRING",
@@ -1620,8 +1665,13 @@
               "name": "bsv_subStruct"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_memberIde"
             },
             {
               "type": "STRING",
@@ -1637,8 +1687,13 @@
               "name": "bsv_subUnion"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_memberIde"
             },
             {
               "type": "STRING",
@@ -1654,8 +1709,13 @@
               "value": "void"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_memberIde"
             },
             {
               "type": "STRING",
@@ -3252,8 +3312,13 @@
                   "value": ":"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_moduleIde"
                 }
               ]
             },
@@ -3297,8 +3362,13 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_moduleIde"
         },
         {
           "type": "CHOICE",
@@ -3427,8 +3497,13 @@
               "name": "bsv_type"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_paramIde"
             }
           ]
         },
@@ -3456,8 +3531,13 @@
               "name": "bsv_type"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_functionIde"
             },
             {
               "type": "STRING",
@@ -3551,8 +3631,13 @@
                   "name": "bsv_type"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_paramIde"
                 }
               ]
             },
@@ -3585,8 +3670,13 @@
                         "name": "bsv_type"
                       },
                       {
-                        "type": "SYMBOL",
-                        "name": "_bsv_identifier"
+                        "type": "ALIAS",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_bsv_identifier"
+                        },
+                        "named": true,
+                        "value": "bsv_paramIde"
                       }
                     ]
                   }
@@ -4241,8 +4331,13 @@
           "value": "rule"
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_ruleIde"
         },
         {
           "type": "CHOICE",
@@ -4282,8 +4377,13 @@
                   "value": ":"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_ruleIde"
                 }
               ]
             },
@@ -4343,8 +4443,13 @@
           "name": "bsv_type"
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_varIde"
         },
         {
           "type": "CHOICE",
@@ -4376,8 +4481,13 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_moduleIde"
         },
         {
           "type": "STRING",
@@ -4485,8 +4595,13 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_interfaceIde"
         },
         {
           "type": "CHOICE",
@@ -4520,8 +4635,13 @@
                           "value": ":"
                         },
                         {
-                          "type": "SYMBOL",
-                          "name": "_bsv_identifier"
+                          "type": "ALIAS",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "_bsv_identifier"
+                          },
+                          "named": true,
+                          "value": "bsv_interfaceIde"
                         }
                       ]
                     },
@@ -5193,8 +5313,13 @@
               ]
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_methodIde"
             },
             {
               "type": "CHOICE",
@@ -5267,8 +5392,13 @@
                       "value": ":"
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "_bsv_identifier"
+                      "type": "ALIAS",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_bsv_identifier"
+                      },
+                      "named": true,
+                      "value": "bsv_methodIde"
                     }
                   ]
                 },
@@ -5299,8 +5429,13 @@
               ]
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_methodIde"
             },
             {
               "type": "CHOICE",
@@ -5407,8 +5542,13 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_paramIde"
             },
             {
               "type": "STRING",
@@ -5539,8 +5679,13 @@
                       "value": ":"
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "_bsv_identifier"
+                      "type": "ALIAS",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_bsv_identifier"
+                      },
+                      "named": true,
+                      "value": "bsv_functionIde"
                     }
                   ]
                 },
@@ -5635,8 +5780,13 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_functionIde"
             },
             {
               "type": "SEQ",
@@ -5653,8 +5803,13 @@
                   "type": "SEQ",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "_bsv_identifier"
+                      "type": "ALIAS",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_bsv_identifier"
+                      },
+                      "named": true,
+                      "value": "bsv_paramIde"
                     },
                     {
                       "type": "REPEAT",
@@ -5666,8 +5821,13 @@
                             "value": ","
                           },
                           {
-                            "type": "SYMBOL",
-                            "name": "_bsv_identifier"
+                            "type": "ALIAS",
+                            "content": {
+                              "type": "SYMBOL",
+                              "name": "_bsv_identifier"
+                            },
+                            "named": true,
+                            "value": "bsv_paramIde"
                           }
                         ]
                       }
@@ -5777,8 +5937,13 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_functionIde"
             },
             {
               "type": "SEQ",
@@ -5795,8 +5960,13 @@
                   "type": "SEQ",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "_bsv_identifier"
+                      "type": "ALIAS",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_bsv_identifier"
+                      },
+                      "named": true,
+                      "value": "bsv_paramIde"
                     },
                     {
                       "type": "REPEAT",
@@ -5808,8 +5978,13 @@
                             "value": ","
                           },
                           {
-                            "type": "SYMBOL",
-                            "name": "_bsv_identifier"
+                            "type": "ALIAS",
+                            "content": {
+                              "type": "SYMBOL",
+                              "name": "_bsv_identifier"
+                            },
+                            "named": true,
+                            "value": "bsv_paramIde"
                           }
                         ]
                       }
@@ -5914,8 +6089,13 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_paramIde"
                 },
                 {
                   "type": "STRING",
@@ -7923,17 +8103,22 @@
             "value": "."
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_bsv_identifier"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_bsv_Identifier"
-              }
-            ]
+            "type": "ALIAS",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_Identifier"
+                }
+              ]
+            },
+            "named": true,
+            "value": "bsv_methodIde"
           },
           {
             "type": "STRING",
@@ -7994,17 +8179,22 @@
             "value": "."
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_bsv_identifier"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_bsv_Identifier"
-              }
-            ]
+            "type": "ALIAS",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_Identifier"
+                }
+              ]
+            },
+            "named": true,
+            "value": "bsv_memberIde"
           }
         ]
       }
@@ -8233,8 +8423,13 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_memberIde"
         },
         {
           "type": "STRING",
@@ -9838,8 +10033,13 @@
               "name": "bsv_type"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_methodIde"
             },
             {
               "type": "STRING",
@@ -9912,8 +10112,13 @@
               "name": "bsv_type"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              "named": true,
+              "value": "bsv_methodIde"
             },
             {
               "type": "STRING",
@@ -9943,8 +10148,13 @@
           "name": "bsv_type"
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_paramIde"
         }
       ]
     },
@@ -9972,8 +10182,13 @@
           "name": "bsv_type"
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_interfaceIde"
         },
         {
           "type": "STRING",
@@ -10385,8 +10600,13 @@
                 "name": "bsv_type"
               },
               {
-                "type": "SYMBOL",
-                "name": "_bsv_identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                "named": true,
+                "value": "bsv_functionIde"
               },
               {
                 "type": "CHOICE",
@@ -10460,8 +10680,13 @@
                 "name": "bsv_type"
               },
               {
-                "type": "SYMBOL",
-                "name": "_bsv_identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                "named": true,
+                "value": "bsv_functionIde"
               },
               {
                 "type": "CHOICE",

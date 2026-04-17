@@ -218,12 +218,15 @@ module.exports = grammar({
       // `let x = expr;` — type inferred declaration.
       // `let { a, b, c } = expr;` — tuple/struct destructuring form.
       seq('let',
-        choice($._bsv_identifier,
-          seq('{', commaSepList1(choice($._bsv_identifier, '_')), '}')),
+        choice(alias($._bsv_identifier, $.bsv_varIde),
+          seq('{',
+            commaSepList1(choice(alias($._bsv_identifier, $.bsv_varIde), '_')),
+            '}')),
         '=', $.bsv_expression, ';')
     ),
     bsv_varInit: $ =>
-      seq($._bsv_identifier, optional($.bsv_arrayDims),
+      seq(alias($._bsv_identifier, $.bsv_varIde),
+        optional($.bsv_arrayDims),
         optional(seq('=', $.bsv_expression))),
     bsv_arrayDims: $ => repeat1(seq('[', $.bsv_expression, ']')),
 
@@ -232,13 +235,16 @@ module.exports = grammar({
     // Also: `let id <- expr ;` (type-inferred varDeclDo)
     bsv_varDeclDo: $ => choice(
       seq(optional($.bsv_attributeInstances),
-        $.bsv_type, $._bsv_identifier, '<-', $.bsv_expression, ';'),
+        $.bsv_type, alias($._bsv_identifier, $.bsv_varIde),
+        '<-', $.bsv_expression, ';'),
       // `let id <- expr ;` (type-inferred actionvalue bind)
       // `let _ <- expr ;` discards the result.
       // `let { a, b } <- expr ;` — tuple/struct destructuring bind.
       seq('let',
-        choice($._bsv_identifier, '_',
-          seq('{', commaSepList1(choice($._bsv_identifier, '_')), '}')),
+        choice(alias($._bsv_identifier, $.bsv_varIde), '_',
+          seq('{',
+            commaSepList1(choice(alias($._bsv_identifier, $.bsv_varIde), '_')),
+            '}')),
         '<-', $.bsv_expression, ';'),
       // `match pattern <- expr ;` — pattern-matching actionvalue bind.
       seq('match', $.bsv_pattern, '<-', $.bsv_expression, ';')
@@ -302,10 +308,11 @@ module.exports = grammar({
         repeat($.bsv_unionMember), '}',
         $.bsv_typeConcreteIde, optional($.bsv_typeFormals),
         optional($.bsv_derives), ';'),
-    bsv_structMember: $ => choice(seq($.bsv_type, $._bsv_identifier, ';'),
-      seq($.bsv_subStruct, $._bsv_identifier, ';'),
-      seq($.bsv_subUnion, $._bsv_identifier, ';'),
-      seq('void', $._bsv_identifier, ';'),
+    bsv_structMember: $ => choice(
+      seq($.bsv_type, alias($._bsv_identifier, $.bsv_memberIde), ';'),
+      seq($.bsv_subStruct, alias($._bsv_identifier, $.bsv_memberIde), ';'),
+      seq($.bsv_subUnion, alias($._bsv_identifier, $.bsv_memberIde), ';'),
+      seq('void', alias($._bsv_identifier, $.bsv_memberIde), ';'),
     ),
     bsv_unionMember: $ =>
       choice(seq($.bsv_type, $._bsv_Identifier, ';'),
@@ -419,10 +426,11 @@ module.exports = grammar({
     bsv_moduleDef: $ => seq(optional($.bsv_attributeInstances),
       $.bsv_moduleProto,
       repeat($.bsv_moduleStmt),
-      'endmodule', optional(seq(':', $._bsv_identifier))),
+      'endmodule',
+      optional(seq(':', alias($._bsv_identifier, $.bsv_moduleIde)))),
     bsv_moduleProto: $ => seq('module',
       optional(seq('[', $.bsv_type, ']')),
-      $._bsv_identifier,
+      alias($._bsv_identifier, $.bsv_moduleIde),
       optional($.bsv_moduleFormalParams),
       '(', optional($.bsv_moduleFormalArgs), ')',
       optional($.bsv_provisos),
@@ -432,16 +440,16 @@ module.exports = grammar({
     bsv_moduleFormalParam: $ => choice(
       seq(optional($.bsv_attributeInstances),
         optional('parameter'),
-        $.bsv_type, $._bsv_identifier),
+        $.bsv_type, alias($._bsv_identifier, $.bsv_paramIde)),
       // function-typed parameter: `function Type name (args)`
       seq(optional($.bsv_attributeInstances),
-        'function', $.bsv_type, $._bsv_identifier,
+        'function', $.bsv_type, alias($._bsv_identifier, $.bsv_functionIde),
         '(', commaSepList($.bsv_functionFormal), ')')
     ),
     bsv_moduleFormalArgs: $ =>
       choice(seq(optional($.bsv_attributeInstances), $.bsv_type),
         commaSepList1(seq(optional($.bsv_attributeInstances),
-          $.bsv_type, $._bsv_identifier))),
+          $.bsv_type, alias($._bsv_identifier, $.bsv_paramIde)))),
 
     // module statements
     bsv_moduleStmt: $ => choice(
@@ -470,12 +478,12 @@ module.exports = grammar({
     bsv_rule: $ => seq(
       optional($.bsv_attributeInstances),
       'rule',
-      $._bsv_identifier,
+      alias($._bsv_identifier, $.bsv_ruleIde),
       optional($.bsv_ruleCond),
       ';',
       repeat($.bsv_actionStmt),
       'endrule',
-      optional(seq(':', $._bsv_identifier))
+      optional(seq(':', alias($._bsv_identifier, $.bsv_ruleIde)))
     ),
     bsv_ruleCond: $ => seq(optional('if'), '(', $.bsv_condPredicate, ')'),
 
@@ -483,7 +491,7 @@ module.exports = grammar({
     bsv_moduleInst: $ => seq(
       optional($.bsv_attributeInstances),
       $.bsv_type,
-      $._bsv_identifier,
+      alias($._bsv_identifier, $.bsv_varIde),
       optional($.bsv_arrayDims),
       '<-',
       $.bsv_moduleApp,
@@ -491,7 +499,7 @@ module.exports = grammar({
     ),
 
     bsv_moduleApp: $ => seq(
-      $._bsv_identifier,
+      alias($._bsv_identifier, $.bsv_moduleIde),
       '(',
       optional(commaSepList($.bsv_moduleActualParamArg)),
       ')',
@@ -510,12 +518,12 @@ module.exports = grammar({
     bsv_subinterfaceDef: $ => seq(
       'interface',
       optional($.bsv_type),
-      $._bsv_identifier,
+      alias($._bsv_identifier, $.bsv_interfaceIde),
       choice(
         seq(';',
           repeat($.bsv_interfaceStmt),
           'endinterface',
-          optional(seq(':', $._bsv_identifier))),
+          optional(seq(':', alias($._bsv_identifier, $.bsv_interfaceIde)))),
         seq('=', $.bsv_expression, ';')
       )
     ),
@@ -550,18 +558,18 @@ module.exports = grammar({
       seq(
         'method',
         optional($.bsv_type),
-        $._bsv_identifier,
+        alias($._bsv_identifier, $.bsv_methodIde),
         optional(seq('(', optional($.bsv_methodFormals), ')')),
         optional($.bsv_implicitCond), ';',
         repeat($.bsv_actionStmt),
         'endmethod',
-        optional(seq(':', $._bsv_identifier))
+        optional(seq(':', alias($._bsv_identifier, $.bsv_methodIde)))
       ),
       // Assignment form: `method ... = expr ;`
       seq(
         'method',
         optional($.bsv_type),
-        $._bsv_identifier,
+        alias($._bsv_identifier, $.bsv_methodIde),
         optional(seq('(', optional($.bsv_methodFormals), ')')),
         optional($.bsv_implicitCond), '=',
         $.bsv_expression, ';'
@@ -569,7 +577,7 @@ module.exports = grammar({
     ),
     bsv_methodFormals: $ => commaSepList1($.bsv_methodFormal),
     bsv_methodFormal: $ => seq(optional($.bsv_type),
-      choice($._bsv_identifier, '_')),
+      choice(alias($._bsv_identifier, $.bsv_paramIde), '_')),
     bsv_implicitCond: $ => seq('if', '(', $.bsv_condPredicate, ')'),
     bsv_condPredicate: $ => prec.left(seq(
       $.bsv_exprOrCondPattern,
@@ -585,7 +593,8 @@ module.exports = grammar({
       seq(optional($.bsv_attributeInstances),
         $.bsv_functionProto,
         $.bsv_functionBody,
-        'endfunction', optional(seq(':', $._bsv_identifier))),
+        'endfunction',
+        optional(seq(':', alias($._bsv_identifier, $.bsv_functionIde)))),
       // Definition by assignment
       seq(optional($.bsv_attributeInstances),
         $.bsv_functionProtoAssign, '=',
@@ -598,21 +607,24 @@ module.exports = grammar({
       choice($.bsv_type, seq('(', $.bsv_type, ')')),
     bsv_functionProto: $ =>
       seq('function', optional($._bsv_functionReturnType),
-        choice($._bsv_identifier,
-          seq($.bsv_macroRef, '(', commaSepList1($._bsv_identifier), ')')),
+        choice(alias($._bsv_identifier, $.bsv_functionIde),
+          seq($.bsv_macroRef, '(',
+            commaSepList1(alias($._bsv_identifier, $.bsv_paramIde)), ')')),
         optional(seq('(', commaSepList($.bsv_functionFormal), ')')),
         optional($.bsv_provisos), ';'),
     bsv_functionProtoAssign: $ =>
       seq('function', optional($._bsv_functionReturnType),
-        choice($._bsv_identifier,
-          seq($.bsv_macroRef, '(', commaSepList1($._bsv_identifier), ')')),
+        choice(alias($._bsv_identifier, $.bsv_functionIde),
+          seq($.bsv_macroRef, '(',
+            commaSepList1(alias($._bsv_identifier, $.bsv_paramIde)), ')')),
         optional(seq('(', commaSepList($.bsv_functionFormal), ')')),
         optional($.bsv_provisos)),
     // Trailing identifier is optional to accommodate function-typed formals,
     // which already carry their own name inside the function-type expression:
     //   function Bit#(n) f (Bit#(m) a)
     bsv_functionFormal: $ => choice(
-      seq(optional($.bsv_type), choice($._bsv_identifier, '_')),
+      seq(optional($.bsv_type),
+        choice(alias($._bsv_identifier, $.bsv_paramIde), '_')),
       $.bsv_functionType
     ),
     bsv_functionBody: $ => choice(
@@ -779,12 +791,12 @@ module.exports = grammar({
     )),
     bsv_methodCall: $ => prec.left(20, seq(
       $.bsv_exprPrimary, '.',
-      choice($._bsv_identifier, $._bsv_Identifier),
+      alias(choice($._bsv_identifier, $._bsv_Identifier), $.bsv_methodIde),
       '(', optional(commaSepList1($.bsv_expression)), ')'
     )),
     bsv_fieldSelect: $ => prec.left(19, seq(
       $.bsv_exprPrimary, '.',
-      choice($._bsv_identifier, $._bsv_Identifier)
+      alias(choice($._bsv_identifier, $._bsv_Identifier), $.bsv_memberIde)
     )),
     bsv_bitSelect: $ => prec.left(20, seq(
       $.bsv_exprPrimary, '[', $.bsv_expression,
@@ -810,7 +822,9 @@ module.exports = grammar({
     // Struct literal: `TypeName { field : expr, ... }`
     bsv_structExpr: $ =>
       seq($.bsv_typeConcreteIde, '{', commaSepList($.bsv_memberBind), '}'),
-    bsv_memberBind: $ => seq($._bsv_identifier, ':', $.bsv_expression),
+    bsv_memberBind: $ =>
+      seq(alias($._bsv_identifier, $.bsv_memberIde),
+        ':', $.bsv_expression),
 
     // Tagged union literal: `tagged Tag {...}` or `tagged Tag exprPrimary`
     bsv_taggedUnionExpr: $ => prec.right(seq(
@@ -913,16 +927,18 @@ module.exports = grammar({
     bsv_methodProto: $ =>
       choice(
         seq(optional($.bsv_attributeInstances), 'method',
-          $.bsv_type, $._bsv_identifier,
+          $.bsv_type, alias($._bsv_identifier, $.bsv_methodIde),
           '(', commaSepList($.bsv_methodProtoFormal), ')', ';'),
         seq(optional($.bsv_attributeInstances), 'method',
-          $.bsv_type, $._bsv_identifier, ';'),
+          $.bsv_type, alias($._bsv_identifier, $.bsv_methodIde), ';'),
       ),
     bsv_methodProtoFormal: $ =>
-      seq(optional($.bsv_attributeInstances), $.bsv_type, $._bsv_identifier),
+      seq(optional($.bsv_attributeInstances), $.bsv_type,
+        alias($._bsv_identifier, $.bsv_paramIde)),
     bsv_subinterfaceDecl: $ =>
       seq(optional($.bsv_attributeInstances), 'interface',
-        $.bsv_type, $._bsv_identifier, ';'),
+        $.bsv_type,
+        alias($._bsv_identifier, $.bsv_interfaceIde), ';'),
 
     // types
     bsv_type: $ =>
@@ -952,9 +968,11 @@ module.exports = grammar({
     // Optionally parenthesized to disambiguate nested function types:
     //   function (function module #(c) _f_g (...)) outerFn (...)
     bsv_functionType: $ => prec.right(choice(
-      seq('function', $.bsv_type, $._bsv_identifier,
+      seq('function', $.bsv_type,
+        alias($._bsv_identifier, $.bsv_functionIde),
         optional(seq('(', commaSepList($.bsv_functionFormal), ')'))),
-      seq('(', 'function', $.bsv_type, $._bsv_identifier,
+      seq('(', 'function', $.bsv_type,
+        alias($._bsv_identifier, $.bsv_functionIde),
         optional(seq('(', commaSepList($.bsv_functionFormal), ')')), ')')
     )),
     // typeVarIde is usually a lowercase identifier; BSV also uses bare `_`
