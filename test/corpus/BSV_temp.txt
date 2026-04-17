@@ -56,10 +56,12 @@ endmodule
             (bsv_type
               (bsv_typeIde
                 (bsv_typeConcreteIde))))
+          (bsv_line_comment)
           (bsv_moduleFormalParam
             (bsv_type
               (bsv_typeIde
-                (bsv_typeConcreteIde)))))
+                (bsv_typeConcreteIde))))
+          (bsv_line_comment))
         (bsv_moduleFormalArgs
           (bsv_type
             (bsv_typeIde
@@ -119,6 +121,7 @@ endmodule
                   (bsv_type
                     (bsv_typeIde
                       (bsv_typeConcreteIde)))))
+              (bsv_line_comment)
               (bsv_actionStmt
                 (bsv_functionDef
                   (bsv_functionProto
@@ -203,6 +206,7 @@ endmodule
                   (bsv_type
                     (bsv_typeIde
                       (bsv_typeConcreteIde)))))
+              (bsv_line_comment)
               (bsv_actionStmt
                 (bsv_functionDef
                   (bsv_functionProto
@@ -265,7 +269,8 @@ endmodule
                                     (bsv_fieldSelect
                                       (bsv_exprPrimary)))))
                               (bsv_expression
-                                (bsv_exprPrimary))))))))))
+                                (bsv_exprPrimary))))
+                          (bsv_line_comment)))))))
               (bsv_actionStmt
                 (bsv_varDecl
                   (bsv_type
@@ -293,6 +298,7 @@ endmodule
                               (bsv_exprPrimary))
                             (bsv_expression
                               (bsv_exprPrimary)))))))))
+              (bsv_line_comment)
               (bsv_actionStmt
                 (bsv_callStmt
                   (bsv_exprPrimary

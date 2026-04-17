@@ -9,6 +9,9 @@
       "file-types": [
         "bsv"
       ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
       "injection-regex": "^bsv$",
       "class-name": "TreeSitterBsv"
     }

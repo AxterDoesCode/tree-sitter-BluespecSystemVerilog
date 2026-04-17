@@ -161,8 +161,21 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "STRING",
-                  "value": "(..)"
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "("
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ".."
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ")"
+                    }
+                  ]
                 },
                 {
                   "type": "BLANK"
@@ -182,8 +195,21 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "STRING",
-                  "value": "(..)"
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "("
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ".."
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ")"
+                    }
+                  ]
                 },
                 {
                   "type": "BLANK"
@@ -308,6 +334,81 @@
         {
           "type": "SYMBOL",
           "name": "bsv_externCImport"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_exportDecl"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_importDecl"
+        },
+        {
+          "type": "PREC_RIGHT",
+          "value": 0,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "bsv_macroRef"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "("
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "SYMBOL",
+                                "name": "bsv_expression"
+                              },
+                              {
+                                "type": "REPEAT",
+                                "content": {
+                                  "type": "SEQ",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": ","
+                                    },
+                                    {
+                                      "type": "SYMBOL",
+                                      "name": "bsv_expression"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "STRING",
+                        "value": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -436,8 +537,69 @@
               "value": "let"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "{"
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SYMBOL",
+                              "name": "_bsv_identifier"
+                            },
+                            {
+                              "type": "STRING",
+                              "value": "_"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "REPEAT",
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": ","
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_bsv_identifier"
+                                  },
+                                  {
+                                    "type": "STRING",
+                                    "value": "_"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "}"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "STRING",
@@ -524,6 +686,18 @@
           "type": "SEQ",
           "members": [
             {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_attributeInstances"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
               "type": "SYMBOL",
               "name": "bsv_type"
             },
@@ -553,8 +727,73 @@
               "value": "let"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "STRING",
+                  "value": "_"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "{"
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SYMBOL",
+                              "name": "_bsv_identifier"
+                            },
+                            {
+                              "type": "STRING",
+                              "value": "_"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "REPEAT",
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": ","
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_bsv_identifier"
+                                  },
+                                  {
+                                    "type": "STRING",
+                                    "value": "_"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "}"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "STRING",
@@ -740,6 +979,62 @@
             {
               "type": "STRING",
               "value": "]"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "{"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_bsv_identifier"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "_"
+                    }
+                  ]
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_bsv_identifier"
+                          },
+                          {
+                            "type": "STRING",
+                            "value": "_"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": "}"
             }
           ]
         }
@@ -1585,8 +1880,17 @@
               "value": "parameter"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_Identifier"
+                }
+              ]
             },
             {
               "type": "STRING",
@@ -1610,8 +1914,17 @@
               "value": "port"
             },
             {
-              "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_Identifier"
+                }
+              ]
             },
             {
               "type": "CHOICE",
@@ -1719,12 +2032,41 @@
                       "members": [
                         {
                           "type": "SYMBOL",
-                          "name": "bsv_expression"
+                          "name": "bsv_bviPortList"
                         },
                         {
                           "type": "BLANK"
                         }
                       ]
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ")"
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "clocked_by"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "("
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "bsv_expression"
                     },
                     {
                       "type": "STRING",
@@ -1798,12 +2140,41 @@
                       "members": [
                         {
                           "type": "SYMBOL",
-                          "name": "bsv_expression"
+                          "name": "bsv_bviPortList"
                         },
                         {
                           "type": "BLANK"
                         }
                       ]
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ")"
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "clocked_by"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "("
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "bsv_expression"
                     },
                     {
                       "type": "STRING",
@@ -1877,7 +2248,7 @@
                       "members": [
                         {
                           "type": "SYMBOL",
-                          "name": "bsv_expression"
+                          "name": "bsv_bviPortList"
                         },
                         {
                           "type": "BLANK"
@@ -1929,7 +2300,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "bsv_expression"
+                  "name": "bsv_bviPortList"
                 },
                 {
                   "type": "BLANK"
@@ -1980,7 +2351,7 @@
                       "members": [
                         {
                           "type": "SYMBOL",
-                          "name": "bsv_expression"
+                          "name": "bsv_bviPortList"
                         },
                         {
                           "type": "BLANK"
@@ -2061,7 +2432,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "bsv_expression"
+                  "name": "bsv_bviPortList"
                 },
                 {
                   "type": "BLANK"
@@ -2274,8 +2645,142 @@
           }
         },
         {
+          "type": "PREC",
+          "value": 3,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "interface"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_type"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              {
+                "type": "STRING",
+                "value": ";"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "bsv_bviMethod"
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "endinterface"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ":"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_bsv_identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
           "type": "SYMBOL",
           "name": "bsv_moduleStmt"
+        }
+      ]
+    },
+    "bsv_bviPortList": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_attributeInstances"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_Identifier"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "bsv_attributeInstances"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_bsv_identifier"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_bsv_Identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -2579,7 +3084,7 @@
                   "members": [
                     {
                       "type": "SYMBOL",
-                      "name": "_bsv_identifier"
+                      "name": "bsv_scheduleOperand"
                     },
                     {
                       "type": "REPEAT",
@@ -2592,7 +3097,7 @@
                           },
                           {
                             "type": "SYMBOL",
-                            "name": "_bsv_identifier"
+                            "name": "bsv_scheduleOperand"
                           }
                         ]
                       }
@@ -2607,7 +3112,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "name": "bsv_scheduleOperand"
             }
           ]
         },
@@ -2647,7 +3152,7 @@
                   "members": [
                     {
                       "type": "SYMBOL",
-                      "name": "_bsv_identifier"
+                      "name": "bsv_scheduleOperand"
                     },
                     {
                       "type": "REPEAT",
@@ -2660,7 +3165,7 @@
                           },
                           {
                             "type": "SYMBOL",
-                            "name": "_bsv_identifier"
+                            "name": "bsv_scheduleOperand"
                           }
                         ]
                       }
@@ -2675,9 +3180,34 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_bsv_identifier"
+              "name": "bsv_scheduleOperand"
             }
           ]
+        }
+      ]
+    },
+    "bsv_scheduleOperand": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_bsv_identifier"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "."
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              }
+            ]
+          }
         }
       ]
     },
@@ -3767,6 +4297,18 @@
     "bsv_ruleCond": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "if"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "STRING",
           "value": "("
@@ -4862,8 +5404,17 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_bsv_identifier"
+            },
+            {
+              "type": "STRING",
+              "value": "_"
+            }
+          ]
         }
       ]
     },
@@ -5035,6 +5586,32 @@
         }
       ]
     },
+    "_bsv_functionReturnType": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "bsv_type"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "bsv_type"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        }
+      ]
+    },
     "bsv_functionProto": {
       "type": "SEQ",
       "members": [
@@ -5047,7 +5624,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "bsv_type"
+              "name": "_bsv_functionReturnType"
             },
             {
               "type": "BLANK"
@@ -5055,8 +5632,55 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_bsv_identifier"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_macroRef"
+                },
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_bsv_identifier"
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "SYMBOL",
+                            "name": "_bsv_identifier"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "CHOICE",
@@ -5142,7 +5766,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "bsv_type"
+              "name": "_bsv_functionReturnType"
             },
             {
               "type": "BLANK"
@@ -5150,8 +5774,55 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_bsv_identifier"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_macroRef"
+                },
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_bsv_identifier"
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "SYMBOL",
+                            "name": "_bsv_identifier"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "CHOICE",
@@ -5222,23 +5893,41 @@
       ]
     },
     "bsv_functionFormal": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "CHOICE",
+          "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "bsv_type"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_type"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
             },
             {
-              "type": "BLANK"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "STRING",
+                  "value": "_"
+                }
+              ]
             }
           ]
         },
         {
           "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "name": "bsv_functionType"
         }
       ]
     },
@@ -5961,8 +6650,34 @@
       ]
     },
     "bsv_typeclassIde": {
-      "type": "SYMBOL",
-      "name": "_bsv_Identifier"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_packageIde"
+                },
+                {
+                  "type": "STRING",
+                  "value": "::"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_bsv_Identifier"
+        }
+      ]
     },
     "bsv_typedepends": {
       "type": "SEQ",
@@ -6231,6 +6946,32 @@
           "name": "_bsv_Identifier"
         },
         {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "bsv_packageIde"
+            },
+            {
+              "type": "STRING",
+              "value": "::"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_bsv_Identifier"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "type": "SYMBOL",
           "name": "bsv_macroRef"
         },
@@ -6395,11 +7136,19 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "bsv_expression"
+                    "name": "_bsv_caseExprBranchValue"
                   },
                   {
-                    "type": "STRING",
-                    "value": ";"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ";"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
                   }
                 ]
               }
@@ -6428,11 +7177,19 @@
                     },
                     {
                       "type": "SYMBOL",
-                      "name": "bsv_expression"
+                      "name": "_bsv_caseExprBranchValue"
                     },
                     {
-                      "type": "STRING",
-                      "value": ";"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": ";"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -6501,11 +7258,19 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "bsv_expression"
+                    "name": "_bsv_caseExprBranchValue"
                   },
                   {
-                    "type": "STRING",
-                    "value": ";"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ";"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
                   }
                 ]
               }
@@ -6534,11 +7299,19 @@
                     },
                     {
                       "type": "SYMBOL",
-                      "name": "bsv_expression"
+                      "name": "_bsv_caseExprBranchValue"
                     },
                     {
-                      "type": "STRING",
-                      "value": ";"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": ";"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -6552,6 +7325,69 @@
               "value": "endcase"
             }
           ]
+        }
+      ]
+    },
+    "_bsv_caseExprBranchValue": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "bsv_expression"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "return"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "bsv_expression"
+            }
+          ]
+        },
+        {
+          "type": "PREC_RIGHT",
+          "value": 0,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "if"
+              },
+              {
+                "type": "STRING",
+                "value": "("
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              },
+              {
+                "type": "STRING",
+                "value": ")"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              },
+              {
+                "type": "STRING",
+                "value": ";"
+              },
+              {
+                "type": "STRING",
+                "value": "else"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              }
+            ]
+          }
         }
       ]
     },
@@ -6604,6 +7440,27 @@
     "bsv_binaryExpr": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "PREC_RIGHT",
+          "value": 14,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              },
+              {
+                "type": "STRING",
+                "value": "**"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_expression"
+              }
+            ]
+          }
+        },
         {
           "type": "PREC_LEFT",
           "value": 14,
@@ -8303,7 +9160,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_bsv_Identifier"
+            "name": "bsv_type"
           },
           {
             "type": "CHOICE",
@@ -9198,6 +10055,98 @@
           "type": "SEQ",
           "members": [
             {
+              "type": "SYMBOL",
+              "name": "bsv_macroRef"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_type"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "bsv_type"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_functionType"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "module"
+            },
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_type"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "bsv_type"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
               "type": "STRING",
               "value": "bit"
             },
@@ -9299,6 +10248,98 @@
           "type": "SEQ",
           "members": [
             {
+              "type": "SYMBOL",
+              "name": "bsv_macroRef"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_type"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "bsv_type"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_functionType"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "module"
+            },
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "bsv_type"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "bsv_type"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
               "type": "STRING",
               "value": "bit"
             },
@@ -9325,6 +10366,165 @@
           ]
         }
       ]
+    },
+    "bsv_functionType": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "function"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_type"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "("
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "SYMBOL",
+                                "name": "bsv_functionFormal"
+                              },
+                              {
+                                "type": "REPEAT",
+                                "content": {
+                                  "type": "SEQ",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": ","
+                                    },
+                                    {
+                                      "type": "SYMBOL",
+                                      "name": "bsv_functionFormal"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "STRING",
+                        "value": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "("
+              },
+              {
+                "type": "STRING",
+                "value": "function"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bsv_type"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_bsv_identifier"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "("
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "SYMBOL",
+                                "name": "bsv_functionFormal"
+                              },
+                              {
+                                "type": "REPEAT",
+                                "content": {
+                                  "type": "SEQ",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": ","
+                                    },
+                                    {
+                                      "type": "SYMBOL",
+                                      "name": "bsv_functionFormal"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "STRING",
+                        "value": ")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "STRING",
+                "value": ")"
+              }
+            ]
+          }
+        ]
+      }
     },
     "bsv_typeVarIde": {
       "type": "CHOICE",
@@ -9383,8 +10583,17 @@
       ]
     },
     "bsv_typeNat": {
-      "type": "PATTERN",
-      "value": "[0-9]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[0-9]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bsv_baseLiteral"
+        }
+      ]
     },
     "bsv_macroRef": {
       "type": "TOKEN",
@@ -9970,8 +11179,17 @@
       "value": "\\\"([^\"\\\\\\n]|\\\\.)*\\\""
     },
     "_bsv_identifier": {
-      "type": "PATTERN",
-      "value": "[$_]*[a-z][a-zA-Z0-9$_]*"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[$_]*[a-z][a-zA-Z0-9$_]*"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\\\[^ \\t\\r\\n]+"
+        }
+      ]
     },
     "_bsv_Identifier": {
       "type": "PATTERN",
@@ -9981,49 +11199,39 @@
       "type": "PATTERN",
       "value": "[$_]*[a-zA-Z][a-zA-Z0-9$_]*"
     },
-    "_bsv_line_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "//"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
-        }
-      ]
-    },
-    "_bsv_block_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "/*"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "[^*]"
-              },
-              {
-                "type": "PATTERN",
-                "value": "\\*[^\\/]"
-              }
-            ]
+    "bsv_line_comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "//"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
           }
-        },
-        {
-          "type": "STRING",
-          "value": "*/"
-        }
-      ]
+        ]
+      }
     },
-    "_bsv_compiler_directive": {
+    "bsv_block_comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "/*"
+          },
+          {
+            "type": "PATTERN",
+            "value": "([^*]|\\*+[^*\\/])*\\*+\\/"
+          }
+        ]
+      }
+    },
+    "bsv_compiler_directive": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",
@@ -10114,7 +11322,84 @@
             },
             {
               "type": "PATTERN",
-              "value": "[^\\n]*"
+              "value": "([^\\n\\\\]|\\\\(.|\\n))*"
+            }
+          ]
+        }
+      }
+    },
+    "bsv_cpp_directive": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 10,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "include"
+                },
+                {
+                  "type": "STRING",
+                  "value": "define"
+                },
+                {
+                  "type": "STRING",
+                  "value": "undef"
+                },
+                {
+                  "type": "STRING",
+                  "value": "if"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ifdef"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ifndef"
+                },
+                {
+                  "type": "STRING",
+                  "value": "elif"
+                },
+                {
+                  "type": "STRING",
+                  "value": "else"
+                },
+                {
+                  "type": "STRING",
+                  "value": "endif"
+                },
+                {
+                  "type": "STRING",
+                  "value": "pragma"
+                },
+                {
+                  "type": "STRING",
+                  "value": "error"
+                },
+                {
+                  "type": "STRING",
+                  "value": "warning"
+                },
+                {
+                  "type": "STRING",
+                  "value": "line"
+                }
+              ]
+            },
+            {
+              "type": "PATTERN",
+              "value": "([^\\n\\\\]|\\\\(.|\\n))*"
             }
           ]
         }
@@ -10128,15 +11413,19 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_bsv_line_comment"
+      "name": "bsv_line_comment"
     },
     {
       "type": "SYMBOL",
-      "name": "_bsv_block_comment"
+      "name": "bsv_block_comment"
     },
     {
       "type": "SYMBOL",
-      "name": "_bsv_compiler_directive"
+      "name": "bsv_compiler_directive"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "bsv_cpp_directive"
     }
   ],
   "conflicts": [
@@ -10216,6 +11505,18 @@
       "bsv_condPredicate"
     ],
     [
+      "bsv_packageStmt",
+      "bsv_type"
+    ],
+    [
+      "_bsv_functionReturnType",
+      "bsv_functionType"
+    ],
+    [
+      "bsv_importBVIStmt",
+      "bsv_subinterfaceDef"
+    ],
+    [
       "bsv_moduleStmt",
       "bsv_caseExpr"
     ],
@@ -10268,6 +11569,62 @@
     ],
     [
       "bsv_exprOrCondPattern"
+    ],
+    [
+      "bsv_subinterfaceDef",
+      "bsv_typeIde"
+    ],
+    [
+      "bsv_subinterfaceDef",
+      "bsv_typeVarIde"
+    ],
+    [
+      "bsv_subinterfaceDef",
+      "bsv_exprPrimary"
+    ],
+    [
+      "bsv_subinterfaceDef",
+      "bsv_lValue"
+    ],
+    [
+      "bsv_package",
+      "bsv_packageStmt"
+    ],
+    [
+      "bsv_returnStmt",
+      "_bsv_caseExprBranchValue"
+    ],
+    [
+      "bsv_exprOrCondPattern",
+      "_bsv_caseExprBranchValue"
+    ],
+    [
+      "bsv_functionProto",
+      "bsv_functionProtoAssign",
+      "bsv_typeVarIde"
+    ],
+    [
+      "bsv_functionProto",
+      "bsv_typeVarIde"
+    ],
+    [
+      "bsv_functionProtoAssign",
+      "bsv_typeVarIde"
+    ],
+    [
+      "bsv_type",
+      "bsv_exprPrimary"
+    ],
+    [
+      "bsv_typeNat",
+      "bsv_unsizedIntLiteral"
+    ],
+    [
+      "bsv_typeVarIde",
+      "bsv_exprPrimary"
+    ],
+    [
+      "bsv_type"
     ]
   ],
   "precedences": [],

@@ -7,7 +7,8 @@ endpackage
 
 -------------
 
-(bsv_package (bsv_packageIde))
+(bsv_package
+  (bsv_packageIde))
 
 =============
 Empty package with comment
@@ -17,4 +18,5 @@ Empty package with comment
 
 -------------
 
-(bsv_package)
+(bsv_package
+  (bsv_line_comment))

@@ -23,7 +23,13 @@ endpackage
 
 --------------
 
-(bsv_package (bsv_packageIde))
+(bsv_package
+  (bsv_block_comment)
+  (bsv_block_comment)
+  (bsv_packageIde)
+  (bsv_block_comment)
+  (bsv_block_comment))
+
 =============
 line comments
 =============
@@ -40,4 +46,9 @@ endpackage
 
 -------------
 
-(bsv_package (bsv_packageIde))
+(bsv_package
+  (bsv_line_comment)
+  (bsv_packageIde)
+  (bsv_line_comment)
+  (bsv_line_comment)
+  (bsv_line_comment))
