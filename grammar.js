@@ -488,7 +488,10 @@ module.exports = grammar({
     bsv_ruleCond: $ => seq(optional('if'), '(', $.bsv_condPredicate, ')'),
 
     // short form module instantiation: `Type id [arrayDims] <- moduleApp ;`
-    bsv_moduleInst: $ => seq(
+    // Dynamic precedence over bsv_varDeclDo so the RHS of `<-` is parsed as
+    // a moduleApp (constructor) whenever that interpretation is valid —
+    // including parameterless forms like `FIFO f <- mkFIFO ;`.
+    bsv_moduleInst: $ => prec.dynamic(1, seq(
       optional($.bsv_attributeInstances),
       $.bsv_type,
       alias($._bsv_identifier, $.bsv_varIde),
@@ -496,13 +499,17 @@ module.exports = grammar({
       '<-',
       $.bsv_moduleApp,
       ';'
-    ),
+    )),
 
+    // Parens are optional — BSV allows parameterless module instantiations
+    // like `FIFO f <- mkFIFO ;` with no `(...)`.
     bsv_moduleApp: $ => seq(
       alias($._bsv_identifier, $.bsv_moduleIde),
-      '(',
-      optional(commaSepList($.bsv_moduleActualParamArg)),
-      ')',
+      optional(seq(
+        '(',
+        optional(commaSepList($.bsv_moduleActualParamArg)),
+        ')'
+      ))
     ),
 
     bsv_moduleActualParamArg: $ => choice(
