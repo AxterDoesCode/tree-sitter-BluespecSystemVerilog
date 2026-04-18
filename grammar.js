@@ -693,11 +693,13 @@ module.exports = grammar({
     ),
 
     bsv_exprPrimary: $ => choice(
-      $._bsv_identifier,
-      $._bsv_Identifier,
+      alias($._bsv_identifier, $.bsv_varIde),
+      alias($._bsv_Identifier, $.bsv_typeConcreteIde),
       // Package-qualified name: `Package::name` or `Package::Name`
       seq($.bsv_packageIde, '::',
-        choice($._bsv_identifier, $._bsv_Identifier)),
+        choice(
+          alias($._bsv_identifier, $.bsv_varIde),
+          alias($._bsv_Identifier, $.bsv_typeConcreteIde))),
       $.bsv_macroRef,
       $.bsv_intLiteral,
       $.bsv_realLiteral,

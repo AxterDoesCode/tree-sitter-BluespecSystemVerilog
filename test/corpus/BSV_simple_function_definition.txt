@@ -30,4 +30,5 @@ endpackage
         (bsv_functionBodyStmt
           (bsv_returnStmt
             (bsv_expression
-              (bsv_exprPrimary))))))))
+              (bsv_exprPrimary
+                (bsv_varIde)))))))))

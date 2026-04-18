@@ -445,7 +445,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
@@ -537,7 +537,15 @@
           "named": true
         },
         {
+          "type": "bsv_typeConcreteIde",
+          "named": true
+        },
+        {
           "type": "bsv_valueOfExpr",
+          "named": true
+        },
+        {
+          "type": "bsv_varIde",
           "named": true
         }
       ]

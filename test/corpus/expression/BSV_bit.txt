@@ -26,9 +26,11 @@ endpackage
           (bsv_exprPrimary
             (bsv_bitConcat
               (bsv_expression
-                (bsv_exprPrimary))
+                (bsv_exprPrimary
+                  (bsv_varIde)))
               (bsv_expression
-                (bsv_exprPrimary))))))))
+                (bsv_exprPrimary
+                  (bsv_varIde)))))))))
   (bsv_packageStmt
     (bsv_varDecl
       (bsv_type
@@ -42,16 +44,20 @@ endpackage
           (bsv_exprPrimary
             (bsv_bitConcat
               (bsv_expression
-                (bsv_exprPrimary))
+                (bsv_exprPrimary
+                  (bsv_varIde)))
               (bsv_expression
-                (bsv_exprPrimary))
+                (bsv_exprPrimary
+                  (bsv_varIde)))
               (bsv_expression
                 (bsv_exprPrimary
                   (bsv_bitConcat
                     (bsv_expression
-                      (bsv_exprPrimary))
+                      (bsv_exprPrimary
+                        (bsv_varIde)))
                     (bsv_expression
-                      (bsv_exprPrimary))))))))))))
+                      (bsv_exprPrimary
+                        (bsv_varIde)))))))))))))
 
 =====================
 Bit select expression
@@ -80,7 +86,8 @@ endpackage
         (bsv_expression
           (bsv_exprPrimary
             (bsv_bitSelect
-              (bsv_exprPrimary)
+              (bsv_exprPrimary
+                (bsv_varIde))
               (bsv_expression
                 (bsv_exprPrimary
                   (bsv_intLiteral
@@ -101,15 +108,19 @@ endpackage
         (bsv_expression
           (bsv_exprPrimary
             (bsv_bitSelect
-              (bsv_exprPrimary)
+              (bsv_exprPrimary
+                (bsv_varIde))
               (bsv_expression
-                (bsv_exprPrimary))
+                (bsv_exprPrimary
+                  (bsv_varIde)))
               (bsv_expression
                 (bsv_exprPrimary
                   (bsv_bitSelect
-                    (bsv_exprPrimary)
+                    (bsv_exprPrimary
+                      (bsv_varIde))
                     (bsv_expression
-                      (bsv_exprPrimary))
+                      (bsv_exprPrimary
+                        (bsv_varIde)))
                     (bsv_expression
                       (bsv_exprPrimary
                         (bsv_intLiteral

@@ -35,11 +35,13 @@ endpackage
                   (bsv_unaryExpr
                     (bsv_unop)
                     (bsv_expression
-                      (bsv_exprPrimary)))))))
+                      (bsv_exprPrimary
+                        (bsv_varIde))))))))
           (bsv_actionStmt
             (bsv_returnStmt
               (bsv_expression
-                (bsv_exprPrimary)))))))))
+                (bsv_exprPrimary
+                  (bsv_varIde))))))))))
 
 ======================
 Method def assignment

@@ -7148,12 +7148,22 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_bsv_identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_identifier"
+          },
+          "named": true,
+          "value": "bsv_varIde"
         },
         {
-          "type": "SYMBOL",
-          "name": "_bsv_Identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_bsv_Identifier"
+          },
+          "named": true,
+          "value": "bsv_typeConcreteIde"
         },
         {
           "type": "SEQ",
@@ -7170,12 +7180,22 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_varIde"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "_bsv_Identifier"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_bsv_Identifier"
+                  },
+                  "named": true,
+                  "value": "bsv_typeConcreteIde"
                 }
               ]
             }

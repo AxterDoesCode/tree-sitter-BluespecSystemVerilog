@@ -24,7 +24,8 @@ endpackage
           (bsv_attrSpec
             (bsv_attrName)
             (bsv_expression
-              (bsv_exprPrimary)))))
+              (bsv_exprPrimary
+                (bsv_varIde))))))
       (bsv_typeConcreteIde)
       (bsv_typeFormals
         (bsv_typeVarIde)

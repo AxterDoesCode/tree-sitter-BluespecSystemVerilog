@@ -39,11 +39,14 @@ endmodule:mkDesign
             (bsv_moduleIde)
             (bsv_moduleActualParamArg
               (bsv_expression
-                (bsv_exprPrimary)))
+                (bsv_exprPrimary
+                  (bsv_varIde))))
             (bsv_moduleActualParamArg
               (bsv_expression
-                (bsv_exprPrimary)))
+                (bsv_exprPrimary
+                  (bsv_varIde))))
             (bsv_moduleActualParamArg
               (bsv_expression
-                (bsv_exprPrimary))))))
+                (bsv_exprPrimary
+                  (bsv_varIde)))))))
       (bsv_moduleIde))))

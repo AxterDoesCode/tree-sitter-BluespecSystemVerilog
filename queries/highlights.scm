@@ -256,12 +256,21 @@
 ; Variable declarations / bindings
 (bsv_varIde) @variable
 
-; Call sites — a function call's callee that's a bare identifier exprPrimary
+; Call sites — a function call's callee that's a bare identifier exprPrimary.
+; The outer exprPrimary form covers non-identifier callees (parenthesised,
+; package-qualified); the inner form overrides for bare identifiers so the
+; more-specific @variable capture doesn't win on the call site.
 (bsv_functionCall
   (bsv_exprPrimary) @function.call)
+(bsv_functionCall
+  (bsv_exprPrimary
+    [(bsv_varIde) (bsv_typeConcreteIde)] @function.call))
 
 ; BSV system tasks / functions start with `$` — e.g. $display, $finish.
-; The callee in a functionCall is the inner bare-identifier exprPrimary.
 ((bsv_functionCall
   (bsv_exprPrimary) @function.builtin)
+ (#match? @function.builtin "^\\$"))
+((bsv_functionCall
+  (bsv_exprPrimary
+    (bsv_varIde) @function.builtin))
  (#match? @function.builtin "^\\$"))
